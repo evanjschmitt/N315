@@ -22,41 +22,31 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: nanum;
 }
 
-nav {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: #010107;
-}
-nav img {
-  max-width: 100px;
-}
-nav .links {
-  width: 60%;
-  max-width: 800px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-nav .links a {
-  color: #ABBE9A;
-  text-decoration: none;
-}
-
 .pageContent {
-  background-color: #36533E;
+  background-color: #545C52;
+}
+.pageContent h1 {
+  font-size: 40px;
+}
+.pageContent h2 {
+  font-size: 35px;
+}
+.pageContent h3 {
+  font-size: 25px;
+}
+.pageContent p {
+  font-size: 20px;
 }
 
 .pageSection {
-  padding: 20px;
+  padding: 15px;
   min-height: 500px;
   background-color: #ABBE9A;
   max-width: 1400px;
   margin: 0 auto;
+}
+.pageSection .text {
+  max-width: 60%;
 }
 
 .flexSection {
@@ -68,6 +58,11 @@ nav .links a {
 .siteImage {
   max-width: 400px;
   max-height: 400px;
+  border-radius: 15px;
+}
+
+.boldText {
+  font-weight: bolder;
 }
 
 @font-face {
@@ -77,4 +72,38 @@ nav .links a {
 @font-face {
   font-family: "nanum";
   src: url(../css/fonts/NanumGothicCoding-Regular.ttf);
+}
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #010107;
+  height: 100px;
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav .logo h1 {
+  color: #E7E6DD;
+  padding-top: 15px;
+}
+nav .logo img {
+  max-width: 100px;
+}
+nav .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav .links a {
+  color: #E7E6DD;
+  text-decoration: none;
+  padding: 20px;
+  font-size: 18px;
 }
