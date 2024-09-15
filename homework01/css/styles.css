@@ -32,14 +32,14 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 35px;
 }
 .pageContent h3 {
-  font-size: 25px;
+  font-size: 30px;
 }
 .pageContent p {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .pageSection {
-  padding: 15px;
+  padding: 25px;
   min-height: 500px;
   background-color: #ABBE9A;
   max-width: 1400px;
@@ -63,6 +63,18 @@ h1, h2, h3, h4, h5, h6, p {
 
 .boldText {
   font-weight: bolder;
+}
+
+.socialList {
+  margin-left: 25px;
+  font-size: 30px;
+  font-family: nanum;
+}
+
+.linkText {
+  color: #36533E;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 @font-face {
