@@ -10,16 +10,20 @@ nav {
   height: 100px;
 
   .logo {
-    display: flex;
+    a {
+      display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding: 10px;
+    }
     h1 {
         color: $beige;
         padding-top: 15px;
+        padding-left: 20px;
     }
 
     img {
-      max-width: 100px;
+      max-width: 75px;
     }
   }
 

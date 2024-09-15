@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6, p {
 .pageSection {
   padding: 25px;
   min-height: 500px;
-  background-color: #ABBE9A;
+  background-color: #E7E6DD;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .linkText {
-  color: #36533E;
+  color: #ABBE9A;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -96,17 +96,19 @@ nav {
   background-color: #010107;
   height: 100px;
 }
-nav .logo {
+nav .logo a {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding: 10px;
 }
 nav .logo h1 {
   color: #E7E6DD;
   padding-top: 15px;
+  padding-left: 20px;
 }
 nav .logo img {
-  max-width: 100px;
+  max-width: 75px;
 }
 nav .links {
   display: flex;
