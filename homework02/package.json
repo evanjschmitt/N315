@@ -1,0 +1,19 @@
+{
+  "name": "week03",
+  "version": "1.0.0",
+  "description": "This is a MVC Example",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "serve": "live-server",
+    "sass-compiler": "sass scss/styles.scss css/styles.css -w --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.78.0"
+  }
+}
