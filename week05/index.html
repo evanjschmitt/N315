@@ -12,7 +12,10 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="assets/img/logo.png" alt="CompanyLogo">
+            <a href="#home">
+                <img src="assets/img/logo.png" alt="CompanyLogo" onclick="changePage('home')">
+            </a>
+
         </div>
         <div class="links">
             <a href="#home">HOME</a>
@@ -24,9 +27,9 @@
     <div id="app">
 
     </div>
-    <script src="lib/jquery-3.7.1.min.js">
-    </script>
-    <script src="app/app.js"></script>
+    <script type="module" src="lib/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="app/app.js"></script>
 </body>
 
 </html>
