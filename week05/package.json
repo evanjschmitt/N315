@@ -1,0 +1,19 @@
+{
+  "name": "week05",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "serve": "live-server",
+    "compile-sass": "sass scss/styles.scss css/styles.css -w --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.79.3"
+  },
+  "dependencies": {
+    "sweetalert2": "^11.14.1"
+  }
+}
