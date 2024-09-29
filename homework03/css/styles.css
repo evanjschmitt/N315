@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "nanumBold";
+  src: url(../css/fonts/NanumGothicCoding-Bold.ttf);
+}
+@font-face {
+  font-family: "nanum";
+  src: url(../css/fonts/NanumGothicCoding-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 16px;
+  color: #010107;
+  font-family: nanum;
+}
+
+.pageContent {
+  background-color: #545C52;
+}
+.pageContent h1 {
+  font-size: 40px;
+}
+.pageContent h2 {
+  font-size: 35px;
+}
+.pageContent h3 {
+  font-size: 30px;
+}
+.pageContent p {
+  font-size: 25px;
+}
+
+.pageSection {
+  padding: 25px;
+  min-height: 500px;
+  background-color: #E7E6DD;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.pageSection .text {
+  max-width: 60%;
+}
+
+.flexSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.artSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.artSection img {
+  max-width: 500px;
+}
+.artSection .caption {
+  margin: 0;
+}
+.artSection .art {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 75px;
+}
+
+.siteImage {
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 15px;
+}
+
+.boldText {
+  font-weight: bolder;
+}
+
+.socialList {
+  margin-left: 25px;
+  font-size: 30px;
+  font-family: nanum;
+}
+
+.linkText {
+  color: #ABBE9A;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@font-face {
+  font-family: "nanumBold";
+  src: url(../css/fonts/NanumGothicCoding-Bold.ttf);
+}
+@font-face {
+  font-family: "nanum";
+  src: url(../css/fonts/NanumGothicCoding-Regular.ttf);
+}
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #010107;
+  height: 100px;
+}
+nav .logo a {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+nav .logo h1 {
+  color: #E7E6DD;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+nav .logo img {
+  max-width: 75px;
+}
+nav .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav .links a {
+  color: #E7E6DD;
+  text-decoration: none;
+  padding: 20px;
+  font-size: 18px;
+}

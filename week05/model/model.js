@@ -31,7 +31,7 @@ export function changePage(pageName) {
 }
 
 export function checkSignIn(callback) {
-  let userSignedIn = false;
+  let userSignedIn = true;
   if (userSignedIn) {
     console.log("Signed In!");
     callback();
