@@ -1,18 +1,123 @@
-/* Error: Positional arguments must come before keyword arguments.
- *   ,
- * 4 |     background-color: rgba($color:0,0,0,0.7);
- *   |                                     ^
- *   '
- *   scss\modal.scss 4:37  @import
- *   scss\styles.scss 4:9  root stylesheet */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Positional arguments must come before keyword arguments.\a   \2577 \a 4 \2502      background-color: rgba($color:0,0,0,0.7);\d\a   \2502                                      ^\a   \2575 \a   scss\\modal.scss 4:37  @import\a   scss\\styles.scss 4:9  root stylesheet";
+html, body {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 16px;
+}
+
+nav {
+  height: 50px;
+  background-color: #50682A;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#app {
+  width: 100%;
+  padding: 50px;
+}
+#app .firstImg {
+  width: 100%;
+}
+#app .firstImg img {
+  max-width: 100%;
+}
+#app .secondImg {
+  width: 100%;
+}
+#app .secondImg img {
+  width: 100%;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.modal .modalBG {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.modal .alertPanel {
+  position: relative;
+  width: 500px;
+  min-height: 300px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.modal .alertPanel .closeButton {
+  font-weight: bolder;
+  font-size: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+.modal .alertPanel .feedback {
+  font-size: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  align-items: center;
+  text-align: center;
+}
+.modal .alertPanel .feedback span {
+  text-decoration: underline;
+  font-weight: bolder;
+  color: #50682a;
+}
+.modal .alertPanel .buttons {
+  color: whitesmoke;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+}
+.modal .alertPanel .buttons .save {
+  cursor: pointer;
+  padding: 20px 40px;
+  border-radius: 10px;
+  background-color: #50682a;
+}
+.modal .alertPanel .buttons .close {
+  cursor: pointer;
+  padding: 20px 40px;
+  border-radius: 10px;
+  background-color: #d23e34;
+}
+.modal .loader {
+  color: white;
+  font-size: 26px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  opacity: 1;
+  animation: fade 2s linear;
+  animation-iteration-count: infinite;
 }

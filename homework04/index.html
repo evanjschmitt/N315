@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homework 4</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <nav>
+    <a href="#home">HOME</a>
+    <!-- <a href="#about">ABOUT</a>
+        <a href="#products">PRODUCTS</a> -->
+    <a id="about" href="#about">ABOUT</a>
+    <p id="login">LOGIN</p>
+    <!-- <a href="#" id="open">OPEN MODAL</a> -->
+  </nav>
+  <div id="app">
+    
+  </div>
+
+  <div class="modal">
+    <!-- Background overlay to close the modal when clicked -->
+    <div class="modalBG closeModal"></div>
+
+    <!-- Modal content panel -->
+    <div class="alertPanel">
+      <!-- Close button in the panel -->
+      <div class="closeButton closeModal">X</div>
+      <div class="feedback">
+        <h2>Login</h2>
+        <div class="buttons">
+
+          <form id="loginForm">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <div class="submit">
+              <div id="submit">Submit</div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+
+      <!-- Login form -->
+
+    </div>
+  </div>
+
+  <script type="module" src="lib/jquery-3.7.1.min.js">
+  </script>
+  <script type="module" src="app/app.js"></script>
+</body>
+
+</html>

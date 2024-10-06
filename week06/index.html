@@ -8,13 +8,15 @@
     <title>Week06: User Feedback</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-<nav>
-    <a href="#home">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#products">PRODUCTS</a>
-    <a href="#contact">CONTACT</a>
-</nav>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#products">PRODUCTS</a>
+        <a id="contact" href="#contact">CONTACT</a>
+        <a href="#" id="open">OPEN MODAL</a>
+    </nav>
     <div id="app">
         <div class="firstImg">
             <img src="assets/img/AriettyPoster.jpeg" alt="Arietty Poster">
@@ -25,7 +27,20 @@
     </div>
 
 
-    <div class="modal"></div>
+    <div class="modal">
+        <div class="modalBG closeModal"></div>
+        <!-- <div class="loader">Loading...</div> -->
+        <div class="alertPanel">
+            <div class="closeButton closeModal">X</div>
+            <div class="feedback">
+                This is my <span>&nbsp;REALLY&nbsp;</span> cool alert!
+            </div>
+            <div class="buttons">
+                <div class="save">SAVE</div>
+                <div class="close closeModal">CLOSE</div>
+            </div>
+        </div>
+    </div>
     <script type="module" src="lib/jquery-3.7.1.min.js">
     </script>
     <script type="module" src="app/app.js"></script>

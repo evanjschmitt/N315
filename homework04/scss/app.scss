@@ -1,0 +1,36 @@
+#app {
+  width: 100%;
+  padding: 50px;
+  
+
+  img {
+    max-width: 500px;
+    
+  }
+.imgRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+ 
+
+}
+
+.images{
+  border: 10px solid #D79686;
+  border-radius: 10px;
+}
+
+  .firstImg {
+    img {
+      max-width: 100%;
+    }
+    width: 100%;
+    // height: 100%;
+  }
+  .secondImg {
+    img {
+     max-width: 100%;
+    }
+    width: 100%;
+  }
+}

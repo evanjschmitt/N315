@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: antiquewhite;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.content .sectionOne {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.content .sectionOne .callout {
+  margin-top: -200px;
+}
+.content .sectionOne .callout * {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.content .sectionOne .callout h3 {
+  font-size: 30px;
+}
+.content .sectionOne .callout h4 {
+  font-size: 25px;
+}
+.content .sectionOne .callout span {
+  color: rgb(19, 158, 204);
+  font-weight: bolder;
+  text-decoration: underline;
+  font-size: larger;
+}
+.content .sectionTwo .imgRow {
+  max-height: 300px;
+  margin-top: -60px;
+}
+.content .sectionTwo .imgRow img {
+  max-height: 450px;
+}
+
+nav {
+  height: 50px;
+  background-color: #D79686;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav a, nav p {
+  color: whitesmoke;
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+}
+nav p {
+  margin-top: 15px;
+}
+nav p:hover {
+  cursor: pointer;
+}
+
+#app {
+  width: 100%;
+  padding: 50px;
+}
+#app img {
+  max-width: 500px;
+}
+#app .imgRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#app .images {
+  border: 10px solid #D79686;
+  border-radius: 10px;
+}
+#app .firstImg {
+  width: 100%;
+}
+#app .firstImg img {
+  max-width: 100%;
+}
+#app .secondImg {
+  width: 100%;
+}
+#app .secondImg img {
+  max-width: 100%;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.modal .modalBG {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.modal .alertPanel {
+  position: relative;
+  width: 500px;
+  min-height: 300px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.modal .alertPanel h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.modal .alertPanel label {
+  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: -20px;
+}
+.modal .alertPanel input {
+  height: 30px;
+  min-width: 150px;
+}
+.modal .alertPanel .closeButton {
+  font-weight: bolder;
+  font-size: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+.modal .alertPanel .save button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.modal .alertPanel .save button:hover {
+  background-color: #45a049;
+}
+.modal .alertPanel #loginForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.modal .alertPanel .buttons {
+  color: whitesmoke;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+}
+.modal .alertPanel .buttons #submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #d79686;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+}
+.modal .alertPanel .buttons .submit button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.modal .alertPanel .buttons .submit button:hover {
+  background-color: #45a049;
+}
+.modal .alertPanel .buttons s .close {
+  cursor: pointer;
+  padding: 20px 40px;
+  border-radius: 10px;
+  background-color: #d23e34;
+}

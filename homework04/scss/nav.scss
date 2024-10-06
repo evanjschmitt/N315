@@ -1,0 +1,20 @@
+nav {
+    height: 50px;
+    background-color: #D79686;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    a, p{
+    color: whitesmoke;
+    text-decoration: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    }
+    p {
+        margin-top: 15px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

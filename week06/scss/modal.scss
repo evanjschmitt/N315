@@ -1,5 +1,93 @@
 .modal {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba($color:0,0,0,0.7);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  
+  .modalBG {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .alertPanel {
+    // max-width: 500px;
+    // max-width: 500px;
+    position: relative;
+    width: 500px;
+    min-height: 300px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .closeButton {
+      font-weight: bolder;
+      font-size: 20px;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      cursor: pointer;
+      // background-color: red;
+      padding: 10px;
+    }
+
+    .feedback {
+      font-size: 30px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    //   display: flex;
+      align-items: center;
+      text-align: center;
+
+      span {
+        text-decoration: underline;
+        // text-decoration: wavy;
+        font-weight: bolder;
+        color: #50682a;
+      }
+    }
+
+    .buttons {
+      //   background-color: #50682a;
+      color: whitesmoke;
+      width: 75%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 18px;
+
+      .save {
+        cursor: pointer;
+        padding: 20px 40px;
+        border-radius: 10px;
+        background-color: #50682a;
+      }
+      .close {
+        cursor: pointer;
+        padding: 20px 40px;
+        border-radius: 10px;
+        background-color: #d23e34;
+      }
+    }
+  }
+
+  .loader {
+    color: white;
+    font-size: 26px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    opacity: 1;
+    animation: fade 2s linear;
+    animation-iteration-count: infinite;
+  }
 }

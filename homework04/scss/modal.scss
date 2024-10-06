@@ -1,0 +1,141 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .modalBG {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .alertPanel {
+    // max-width: 500px;
+    // max-width: 500px;
+    position: relative;
+    width: 500px;
+    min-height: 300px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    h2 {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    label {
+      color: black;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      margin-bottom: -20px;
+    }
+    input {
+      height: 30px;
+      min-width: 150px;
+    }
+
+    .closeButton {
+      font-weight: bolder;
+      font-size: 20px;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      cursor: pointer;
+      // background-color: red;
+      padding: 10px;
+    }
+    .save button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .save button:hover {
+      background-color: #45a049;
+    }
+
+    #loginForm {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      margin: 0 auto;
+    }
+
+    .buttons {
+      //   background-color: #50682a;
+      color: whitesmoke;
+      width: 75%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 18px;
+
+      #submit {
+        width: 100%;
+        padding: 10px;
+        background-color: #d79686;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        margin-bottom: 20px;
+      }
+
+      .submit {
+        button {
+          width: 100%;
+          padding: 10px;
+          background-color: #4caf50;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+
+        button:hover {
+          background-color: #45a049;
+        }
+      }
+      s .close {
+        cursor: pointer;
+        padding: 20px 40px;
+        border-radius: 10px;
+        background-color: #d23e34;
+      }
+    }
+  }
+
+  // .loader {
+  //   color: white;
+  //   font-size: 26px;
+  //   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  //     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  //   opacity: 1;
+  //   animation: fade 2s linear;
+  //   animation-iteration-count: infinite;
+  // }
+}
