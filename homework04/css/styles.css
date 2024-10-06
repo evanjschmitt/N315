@@ -30,9 +30,6 @@ p {
   align-items: center;
   justify-content: space-evenly;
 }
-.content .sectionOne .callout {
-  margin-top: -200px;
-}
 .content .sectionOne .callout * {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
