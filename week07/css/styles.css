@@ -1,17 +1,94 @@
-/* Error: Expected string.
- *   ,
- * 1 | @import "structure.scss",
- *   |                          ^
- *   '
- *   scss\styles.scss 1:26  root stylesheet */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: Expected string.\a   \2577 \a 1 \2502  @import "structure.scss",\d\a   \2502                           ^\a   \2575 \a   scss\\styles.scss 1:26  root stylesheet';
+html, body {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+  padding: 0px 0px 20px 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightcoral;
+  height: 50px;
+  padding: 10px;
+}
+nav .logo {
+  color: antiquewhite;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 2%;
+}
+nav .logo img {
+  width: 50px;
+}
+nav .links {
+  min-width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav .signInOut {
+  min-width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav a {
+  text-decoration: none;
+  color: antiquewhite;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  position: relative;
+}
+nav a .count {
+  position: absolute;
+  top: -8px;
+  right: -20px;
+}
+
+#app {
+  display: flex;
+  flex: wrap;
+  justify-content: space-evenly;
+}
+#app .product {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 25px 0px;
+}
+#app .product h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  font-size: larger;
+}
+#app .product span {
+  padding: 10px 30px;
+  background-color: red;
+  color: antiquewhite;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#app .product span:hover {
+  background-color: darkred;
+  font-weight: bold;
 }

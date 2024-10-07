@@ -1,0 +1,34 @@
+#app {
+    display: flex;
+    flex: wrap;
+    justify-content: space-evenly;
+    .product{
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin: 25px 0px;
+        h4{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            font-size: larger;
+        }
+
+        span {
+            padding: 10px 30px;
+            background-color: red;
+            color: antiquewhite;
+            cursor: pointer;
+            border-radius: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            &:hover{
+                background-color: darkred;
+                font-weight: bold;
+            }
+        }
+    }
+}
