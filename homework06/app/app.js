@@ -7,12 +7,12 @@ hamburgerMenu.addEventListener("click", () => {
 });
 
 function initListeners() {
-  $("nav a").on("click", function (e) {
-    let id = e.currentTarget.id;
-    console.log(id)
-    $("#app").html(id);
-    closeNav();
-  });
+  // $("nav a").on("click", function (e) {
+  //   let id = e.currentTarget.id;
+  //   console.log(id)
+  //   $("#app").html(id);
+  //   closeNav();
+  // });
 
   $(".clickContainer").on("click", function(e){
     console.log("Clicked")

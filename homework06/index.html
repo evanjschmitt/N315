@@ -12,38 +12,64 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <div class="background"></div>
     <header>
       <div class="navHolder">
         <div class="logo">
-          <img src="" alt="">
+          <img src="/assets/images/logo.svg" alt="Our Logo" />
         </div>
         <nav class="nav">
+          <div class="clickContainer"></div>
           <ul class="nav--ul__one">
             <li class="nav-link"><a id="home" href="#">Home</a></li>
             <li class="nav-link"><a id="browse" href="#">Browse</a></li>
-            <li class="nav-link"><a id="create" href="#">Create Recipie</a></li>
-          </ul>
-          <ul class="nav--ul__two">
+            <li class="nav-link"><a id="create" href="#">Create Recipe</a></li>
             <li class="nav-button">
               <a id="login" href="#">LOGIN</a>
             </li>
           </ul>
-          <div class="clickContainer"></div>
         </nav>
-
-        <span class="hamburger-menu material-symbols-outlined"> menu </span>
+        <span class="hamburger-menu material-symbols-outlined">menu</span>
       </div>
     </header>
     <div id="app">
       <div class="circle-container">
-        <div class="yellow-cricle">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium porro esse alias amet? Neque, a quod. Quidem voluptatem maxime, iste eveniet perferendis reprehenderit placeat necessitatibus consectetur corrupti, earum commodi culpa?</p>
+        <div class="yellow-circle">
+          <h2>The Jungle Cook</h2>
+          <p class="yellowTagline">
+            The home to various recipes of your choice. Add your own recipe
+            today and fill the world with joy!
+          </p>
         </div>
         <div class="small-circle">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, vitae!</p>
+          <p>Want to be a Jungle Cook? Go ahead and the kitchen is yours!</p>
         </div>
       </div>
     </div>
+    <footer>
+      <div class="footer">
+        <p>Copyright &copy; 2024 JungleCook</p>
+        <ul>
+          <li>Login</li>
+          <li>Recipies by Category</li>
+          <li>Privacy and Copyright</li>
+          <li>Create Recipie</li>
+          <li>Your Recipies</li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#"
+              ><img src="assets/images/facebook.svg" alt="Our Facebook!"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="assets/images/instagram.svg" alt="Our Instagram!"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
     <script src="lib/jquery-3.7.1.min.js"></script>
     <script src="app/app.js"></script>
   </body>
