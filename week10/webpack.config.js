@@ -1,3 +1,4 @@
+const { watch } = require("fs");
 const path = require("path");
 
 module.exports = {
@@ -9,4 +10,5 @@ module.exports = {
     path: path.resolve(__dirname, "dist/app"),
     filename: "app.js",
   },
+  watch: true,
 };

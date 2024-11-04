@@ -2,10 +2,37 @@
  margin: 0;
  padding: 0;
  box-sizing: border-box;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 html, body {
  height: 100%;
 }
 h1, h2, h3, h4, h5, h6, p {
  margin-bottom: 16px;
+}
+
+
+#app {
+    padding: 50px;
+    /* width: 80%; */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto 50px auto;
+}
+input {
+    height: 45px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+#yourRecipies {
+    display: none;
 }
