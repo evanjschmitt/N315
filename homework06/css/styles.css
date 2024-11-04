@@ -158,11 +158,11 @@
 }
 @font-face {
   font-family: Lato;
-  src: url(/assets/fonts/Lato-Regular.ttf);
+  src: url(../assets/fonts/Lato-Regular.ttf);
 }
 @font-face {
   font-family: LatoItalic;
-  src: url(/assets/fonts/Lato-Italic.ttf);
+  src: url(../assets/fonts/Lato-Italic.ttf);
 }
 @font-face {
   font-family: LatoBlack;
