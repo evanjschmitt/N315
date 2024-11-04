@@ -4,7 +4,7 @@ function changeRoute() {
   console.log("Current pageID:", pageID); // Debugging log
 
   if (pageID != "") {
-    $.get(`../pages/${pageID}/${pageID}.html`, function (data) {
+    $.get(`pages/${pageID}/${pageID}.html`, function (data) {
       // console.log("data:", data);
       $("#app").html(data);
     }).fail(function () {
