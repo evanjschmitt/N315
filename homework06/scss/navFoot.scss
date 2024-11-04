@@ -1,18 +1,18 @@
 .navHolder {
   /* background-color: green; */
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   margin-top: 50px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  
+  justify-content: space-between;
 }
 
 .navHolder .logo {
   font-size: 2rem;
   font-weight: bold;
   color: wheat;
+  margin-left: 25px;
 }
 
 .navHolder ul {
@@ -47,6 +47,7 @@
 
 .nav-button {
   background-color: #ffd972;
+  box-shadow: -5px 10px 6px 0.2px rgba(130, 130, 160, 0.3);
   width: 150px;
   height: 50px;
   display: flex;
@@ -73,18 +74,35 @@
 .footer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Adjust as needed (space-between, space-around) */
   position: absolute;
   bottom: 0;
-  width: 90%;
+  width: 80%; /* Set footer to full width */
+
+  font-size: 15px;
   font-family: LatoItalic;
+
+  .linkList {
+    flex: 3; /* Instead of width: 2fr */
+  }
+
+  .copy {
+    flex: 1; /* Instead of width: 1fr */
+  }
+
+  .logos {
+    flex: 1; /* Instead of width: 2fr */
+  }
+
   ul {
     list-style-type: none;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
+
     li {
-      padding: 10px;
+      margin: 5px;
+
       img {
         width: 20px;
       }
@@ -94,16 +112,22 @@
 
 //MQ
 @media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
   .navHolder {
+    margin-top: 25px;
+
     .logo {
       font-size: 1.2rem;
       z-index: 2;
+      margin-left: 20px;
     }
   }
 
-.clickContainer {
-  display: block;
-}
+  .clickContainer {
+    display: block;
+  }
 
   .nav {
     flex-direction: column;
@@ -135,6 +159,8 @@
 
   .hamburger-menu {
     display: block;
+    margin-right: 50px;
+    font-size: 30px;
   }
 
   .footer {
