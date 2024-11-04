@@ -1,0 +1,352 @@
+.navHolder {
+  /* background-color: green; */
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navHolder .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: wheat;
+  margin-left: 25px;
+}
+
+.navHolder ul {
+  list-style: none;
+}
+
+.navHolder a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.clickContainer {
+  position: absolute;
+  /* z-index: -1; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+.nav--ul__one {
+  margin: 0 auto;
+}
+
+.nav-button {
+  background-color: #ffd972;
+  box-shadow: -5px 10px 6px 0.2px rgba(130, 130, 160, 0.3);
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 50px;
+  margin-top: -5px;
+}
+
+.navHolder,
+.nav--ul__one,
+.nav--ul__two {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 1.5rem;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Adjust as needed (space-between, space-around) */
+  position: absolute;
+  bottom: 0;
+  width: 80%; /* Set footer to full width */
+  font-size: 15px;
+  font-family: LatoItalic;
+}
+.footer .linkList {
+  flex: 3; /* Instead of width: 2fr */
+}
+.footer .copy {
+  flex: 1; /* Instead of width: 1fr */
+}
+.footer .logos {
+  flex: 1; /* Instead of width: 2fr */
+}
+.footer ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer ul li {
+  margin: 5px;
+}
+.footer ul li img {
+  width: 20px;
+}
+
+@media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
+  .navHolder {
+    margin-top: 25px;
+  }
+  .navHolder .logo {
+    font-size: 1.2rem;
+    z-index: 2;
+    margin-left: 20px;
+  }
+  .clickContainer {
+    display: block;
+  }
+  .nav {
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    min-width: 100%;
+    padding-top: 6rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #a7e8bd;
+    transition: 0.4s ease-in-out;
+  }
+  .nav.active {
+    right: 0;
+  }
+  .nav--ul__one,
+  .nav--ul__two {
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 2;
+    margin-top: 50px;
+  }
+  .hamburger-menu {
+    display: block;
+    margin-right: 50px;
+    font-size: 30px;
+  }
+  .footer {
+    font-size: smaller;
+  }
+}
+@font-face {
+  font-family: Caveat;
+  src: url(../assets/fonts/Caveat-Regular.ttf);
+}
+@font-face {
+  font-family: Lato;
+  src: url(../assets/fonts/Lato-Regular.ttf);
+}
+@font-face {
+  font-family: LatoItalic;
+  src: url(../assets/fonts/Lato-Italic.ttf);
+}
+@font-face {
+  font-family: LatoBlack;
+  src: url(../assets/fonts/Lato-Black.ttf);
+}
+@font-face {
+  font-family: LatoThin;
+  src: url(../assets/fonts/Lato-Thin.ttf);
+}
+.wholePage {
+  z-index: 2;
+}
+
+.pageContent {
+  z-index: 0;
+}
+
+.circle-container {
+  width: 357px;
+  height: 357px;
+  margin-top: 150px;
+  /* background-color: lightyellow; */
+  position: relative;
+}
+.circle-container .small-circle {
+  width: 168px;
+  height: 168px;
+  position: absolute;
+  background-color: #fcbcb8;
+  border-radius: 50%;
+  right: -50px;
+  top: -50px;
+  display: flex;
+  z-index: -2;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -5px 10px 6px 0.2px rgba(130, 130, 160, 0.3);
+  text-align: center;
+  font-size: 10px;
+}
+.circle-container .small-circle p {
+  width: 80px;
+  font-family: LatoItalic;
+}
+.circle-container .yellow-circle {
+  background-color: #ffd972;
+  border-radius: 50%;
+  width: 357px;
+  height: 357px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -5px 10px 6px 0.2px rgba(130, 130, 160, 0.3);
+  position: absolute;
+  z-index: -1;
+  text-align: center;
+}
+.circle-container .yellow-circle h2 {
+  font-family: Caveat;
+  font-size: 25px;
+}
+.circle-container .yellow-circle .yellowTagline {
+  font-family: Lato;
+}
+.circle-container .yellow-circle p {
+  width: 200px;
+}
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.loginContainer .loginForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.loginContainer .loginForm .heading {
+  margin-bottom: 60px;
+  width: 250px;
+}
+.loginContainer .loginForm .heading h3 {
+  font-size: 30px;
+  font-family: LatoThin;
+  text-align: left;
+}
+.loginContainer .loginForm .heading p {
+  font-size: 12px;
+}
+.loginContainer .loginForm input {
+  margin-bottom: 50px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+  width: 250px;
+  font-size: 12px;
+  padding: 5px;
+}
+.loginContainer .loginForm input::placeholder {
+  color: black;
+}
+.loginContainer .loginForm .loginButton {
+  padding: 10px 20px;
+  background-color: #ffd972;
+  box-shadow: -5px 10px 6px 0.2px rgba(130, 130, 160, 0.3);
+  border-radius: 50px;
+  border: none;
+  width: 200px;
+  height: 50px;
+  font-family: Caveat;
+  font-size: 25px;
+}
+
+@media (max-width: 700px) {
+  .loginContainer {
+    flex-direction: column;
+  }
+  .loginContainer .loginForm {
+    margin-top: 50px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+  font-family: lato;
+}
+
+header {
+  color: black;
+  padding: 0.5rem 0;
+  font-family: Caveat;
+  font-size: 25px;
+}
+
+#app {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.background {
+  min-height: 100vh;
+  width: 100vw;
+  z-index: -2;
+  position: absolute;
+  background-image: url(../assets/images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 92, 84, 0.4);
+}
+
+.background.yellow::after {
+  background-color: #FFD972 !important; /* Use !important to override */
+}

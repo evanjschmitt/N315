@@ -1,0 +1,32 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ (() => {
+
+eval("function changeRoute() {\r\n  let hashTag = window.location.hash;\r\n  let pageID = hashTag.replace(\"#\", \"\");\r\n  console.log(\"Current pageID:\", pageID); // Debugging log\r\n\r\n  if (pageID != \"\") {\r\n    $.get(`pages/${pageID}/${pageID}.html`, function (data) {\r\n      // console.log(\"data:\", data);\r\n      $(\"#app\").html(data);\r\n    }).fail(function () {\r\n      console.error(`Failed to load ${pageID}.html`);\r\n    });\r\n  } else {\r\n    $.get(`pages/home/home.html`, function (data) {\r\n      // console.log(\"data:\", data);\r\n      $(\"#app\").html(data);\r\n    }).fail(function () {\r\n      console.error(\"Failed to load home.html\");\r\n    });\r\n  }\r\n\r\n  //CHANGE BG TO YELLOW ON LOGIN\r\n  if (pageID === \"login\") {\r\n    console.log(\"On Login Page\");\r\n    document.querySelector(\".background\").classList.add(\"yellow\");\r\n  } else {\r\n    document.querySelector(\".background\").classList.remove(\"yellow\");\r\n  }\r\n}\r\nfunction initURLListener() {\r\n  $(window).on(\"hashchange\", changeRoute);\r\n  changeRoute();\r\n}\r\n\r\n$(document).ready(function () {\r\n  initURLListener();\r\n});\r\n\r\n// const hamburgerMenu = $('hamburger-menu'); //Jquery Way\r\nconst hamburgerMenu = document.querySelector(\".hamburger-menu\"); //JS Way\r\nconst nav = document.querySelector(\".nav\");\r\n\r\nhamburgerMenu.addEventListener(\"click\", () => {\r\n  nav.classList.toggle(\"active\");\r\n});\r\n\r\nfunction initListeners() {\r\n  $(\"nav a\").on(\"click\", function (e) {\r\n    closeNav();\r\n  });\r\n\r\n  $(\".clickContainer\").on(\"click\", function (e) {\r\n    console.log(\"Clicked\");\r\n    closeNav();\r\n  });\r\n}\r\n\r\nfunction closeNav() {\r\n  nav.classList.toggle(\"active\");\r\n}\r\n$(document).ready(function () {\r\n  initListeners();\r\n});\r\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMiLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0EsMENBQTBDO0FBQzFDO0FBQ0E7QUFDQSxtQkFBbUIsT0FBTyxHQUFHLE9BQU87QUFDcEM7QUFDQTtBQUNBLEtBQUs7QUFDTCxzQ0FBc0MsT0FBTztBQUM3QyxLQUFLO0FBQ0wsSUFBSTtBQUNKO0FBQ0E7QUFDQTtBQUNBLEtBQUs7QUFDTDtBQUNBLEtBQUs7QUFDTDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxJQUFJO0FBQ0o7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxDQUFDO0FBQ0Q7QUFDQSw4Q0FBOEM7QUFDOUMsaUVBQWlFO0FBQ2pFO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsQ0FBQztBQUNEO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsR0FBRztBQUNIO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsR0FBRztBQUNIO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsQ0FBQyIsInNvdXJjZXMiOlsid2VicGFjazovL2p1bmdsZS1jb29rLy4vc3JjL2luZGV4LmpzP2I2MzUiXSwic291cmNlc0NvbnRlbnQiOlsiZnVuY3Rpb24gY2hhbmdlUm91dGUoKSB7XHJcbiAgbGV0IGhhc2hUYWcgPSB3aW5kb3cubG9jYXRpb24uaGFzaDtcclxuICBsZXQgcGFnZUlEID0gaGFzaFRhZy5yZXBsYWNlKFwiI1wiLCBcIlwiKTtcclxuICBjb25zb2xlLmxvZyhcIkN1cnJlbnQgcGFnZUlEOlwiLCBwYWdlSUQpOyAvLyBEZWJ1Z2dpbmcgbG9nXHJcblxyXG4gIGlmIChwYWdlSUQgIT0gXCJcIikge1xyXG4gICAgJC5nZXQoYHBhZ2VzLyR7cGFnZUlEfS8ke3BhZ2VJRH0uaHRtbGAsIGZ1bmN0aW9uIChkYXRhKSB7XHJcbiAgICAgIC8vIGNvbnNvbGUubG9nKFwiZGF0YTpcIiwgZGF0YSk7XHJcbiAgICAgICQoXCIjYXBwXCIpLmh0bWwoZGF0YSk7XHJcbiAgICB9KS5mYWlsKGZ1bmN0aW9uICgpIHtcclxuICAgICAgY29uc29sZS5lcnJvcihgRmFpbGVkIHRvIGxvYWQgJHtwYWdlSUR9Lmh0bWxgKTtcclxuICAgIH0pO1xyXG4gIH0gZWxzZSB7XHJcbiAgICAkLmdldChgcGFnZXMvaG9tZS9ob21lLmh0bWxgLCBmdW5jdGlvbiAoZGF0YSkge1xyXG4gICAgICAvLyBjb25zb2xlLmxvZyhcImRhdGE6XCIsIGRhdGEpO1xyXG4gICAgICAkKFwiI2FwcFwiKS5odG1sKGRhdGEpO1xyXG4gICAgfSkuZmFpbChmdW5jdGlvbiAoKSB7XHJcbiAgICAgIGNvbnNvbGUuZXJyb3IoXCJGYWlsZWQgdG8gbG9hZCBob21lLmh0bWxcIik7XHJcbiAgICB9KTtcclxuICB9XHJcblxyXG4gIC8vQ0hBTkdFIEJHIFRPIFlFTExPVyBPTiBMT0dJTlxyXG4gIGlmIChwYWdlSUQgPT09IFwibG9naW5cIikge1xyXG4gICAgY29uc29sZS5sb2coXCJPbiBMb2dpbiBQYWdlXCIpO1xyXG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5iYWNrZ3JvdW5kXCIpLmNsYXNzTGlzdC5hZGQoXCJ5ZWxsb3dcIik7XHJcbiAgfSBlbHNlIHtcclxuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuYmFja2dyb3VuZFwiKS5jbGFzc0xpc3QucmVtb3ZlKFwieWVsbG93XCIpO1xyXG4gIH1cclxufVxyXG5mdW5jdGlvbiBpbml0VVJMTGlzdGVuZXIoKSB7XHJcbiAgJCh3aW5kb3cpLm9uKFwiaGFzaGNoYW5nZVwiLCBjaGFuZ2VSb3V0ZSk7XHJcbiAgY2hhbmdlUm91dGUoKTtcclxufVxyXG5cclxuJChkb2N1bWVudCkucmVhZHkoZnVuY3Rpb24gKCkge1xyXG4gIGluaXRVUkxMaXN0ZW5lcigpO1xyXG59KTtcclxuXHJcbi8vIGNvbnN0IGhhbWJ1cmdlck1lbnUgPSAkKCdoYW1idXJnZXItbWVudScpOyAvL0pxdWVyeSBXYXlcclxuY29uc3QgaGFtYnVyZ2VyTWVudSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuaGFtYnVyZ2VyLW1lbnVcIik7IC8vSlMgV2F5XHJcbmNvbnN0IG5hdiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIubmF2XCIpO1xyXG5cclxuaGFtYnVyZ2VyTWVudS5hZGRFdmVudExpc3RlbmVyKFwiY2xpY2tcIiwgKCkgPT4ge1xyXG4gIG5hdi5jbGFzc0xpc3QudG9nZ2xlKFwiYWN0aXZlXCIpO1xyXG59KTtcclxuXHJcbmZ1bmN0aW9uIGluaXRMaXN0ZW5lcnMoKSB7XHJcbiAgJChcIm5hdiBhXCIpLm9uKFwiY2xpY2tcIiwgZnVuY3Rpb24gKGUpIHtcclxuICAgIGNsb3NlTmF2KCk7XHJcbiAgfSk7XHJcblxyXG4gICQoXCIuY2xpY2tDb250YWluZXJcIikub24oXCJjbGlja1wiLCBmdW5jdGlvbiAoZSkge1xyXG4gICAgY29uc29sZS5sb2coXCJDbGlja2VkXCIpO1xyXG4gICAgY2xvc2VOYXYoKTtcclxuICB9KTtcclxufVxyXG5cclxuZnVuY3Rpb24gY2xvc2VOYXYoKSB7XHJcbiAgbmF2LmNsYXNzTGlzdC50b2dnbGUoXCJhY3RpdmVcIik7XHJcbn1cclxuJChkb2N1bWVudCkucmVhZHkoZnVuY3Rpb24gKCkge1xyXG4gIGluaXRMaXN0ZW5lcnMoKTtcclxufSk7XHJcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/index.js\n");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./src/index.js"]();
+/******/ 	
+/******/ })()
+;
