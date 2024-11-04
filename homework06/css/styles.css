@@ -154,7 +154,7 @@
 }
 @font-face {
   font-family: Caveat;
-  src: url(/assets/fonts/Caveat-Regular.ttf);
+  src: url(../assets/fonts/Caveat-Regular.ttf);
 }
 @font-face {
   font-family: Lato;
@@ -166,11 +166,11 @@
 }
 @font-face {
   font-family: LatoBlack;
-  src: url(/assets/fonts/Lato-Black.ttf);
+  src: url(../assets/fonts/Lato-Black.ttf);
 }
 @font-face {
   font-family: LatoThin;
-  src: url(/assets/fonts/Lato-Thin.ttf);
+  src: url(../assets/fonts/Lato-Thin.ttf);
 }
 .wholePage {
   z-index: 2;
