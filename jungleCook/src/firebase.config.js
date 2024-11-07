@@ -7,7 +7,7 @@ const firebaseConfig = {
   projectId: "n315-class",
   storageBucket: "n315-class.firebasestorage.app",
   messagingSenderId: "248604181670",
-  appId: "1:248604181670:web:aeed15537fda57171a6067",
+  appId: "1:248604181670:web:8ac461505f8de0491a6067"
 };
 
 // Initialize Firebase

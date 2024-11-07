@@ -1,3 +1,5 @@
+import * as $ from "jquery";
+import { signUserIn, signUserOut, signUserUp } from "./model";
 function changeRoute() {
   let hashTag = window.location.hash;
   let pageID = hashTag.replace("#", "");
@@ -53,6 +55,35 @@ function initListeners() {
     console.log("Clicked");
     closeNav();
   });
+
+  $(document).on("click", "#submit", (event) => {
+    event.preventDefault();
+    console.log("Button Clicked");
+    const firstName = $("#fName").val();
+    const lastName = $("#lName").val();
+    const email = $("#email").val();
+    const password = $("#password").val();
+    console.log(firstName, lastName, email, password);
+    signUserUp(firstName, lastName, email, password);
+    $("#fName").val("");
+    $("#lName").val("");
+    $("#email").val("");
+    $("#password").val("");
+  });
+
+  $(document).on("click", "#signOut", (event) => {
+    signUserOut();
+  });
+
+  $(document).on("click", "#signIn", (event) => {
+    const siEmail = $("#siEmail").val();
+    const siPassword = $("#siPassword").val();
+    signUserIn(siEmail, siPassword);
+    $("#siEmail").val("");
+    $("#siPassword").val("");
+  });
+
+  console.log("init list");
 }
 
 function closeNav() {

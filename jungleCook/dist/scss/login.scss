@@ -47,6 +47,9 @@
       height: 50px;
       font-family: Caveat ;
       font-size: 25px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
