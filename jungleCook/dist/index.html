@@ -13,64 +13,67 @@
   </head>
   <body>
     <div class="background"></div>
-    <header>
-      <div class="navHolder">
-        <div class="logo">
-          <a href="#home">
-            <img src="assets/images/logo.svg" alt="Our Logo" />
-          </a>
+    <div class="wholeSite">
+      <header>
+        <div class="navHolder">
+          <div class="logo">
+            <a href="#home">
+              <img src="assets/images/logo.svg" alt="Our Logo" />
+            </a>
+          </div>
+          <nav class="nav">
+            <div class="clickContainer"></div>
+            <ul class="nav--ul__one">
+              <li class="nav-link"><a id="home" href="#home">Home</a></li>
+              <li class="nav-link"><a id="browse" href="#">Browse</a></li>
+              <li class="nav-link loginOnly">
+                <a id="create" href="#">Create Recipe</a>
+              </li>
+              <li class="nav-button logoutOnly">
+                <a id="login" href="#login">LOGIN</a>
+              </li>
+              <li class="nav-button loginOnly">
+                <a id="signOut" href="#login">LOGOUT</a>
+              </li>
+            </ul>
+          </nav>
+          <span class="hamburger-menu material-symbols-outlined">menu</span>
         </div>
-        <nav class="nav">
-          <div class="clickContainer"></div>
-          <ul class="nav--ul__one">
-            <li class="nav-link"><a id="home" href="#home">Home</a></li>
-            <li class="nav-link"><a id="browse" href="#">Browse</a></li>
-            <li class="nav-link loginOnly">
-              <a id="create" href="#">Create Recipe</a>
-            </li>
-            <li class="nav-button logoutOnly">
-              <a id="login" href="#login">LOGIN</a>
-            </li>
-            <li class="nav-button loginOnly">
-              <a id="signOut" href="#login">LOGOUT</a>
-            </li>
-          </ul>
-        </nav>
-        <span class="hamburger-menu material-symbols-outlined">menu</span>
-      </div>
-    </header>
-    <div id="app"></div>
-    <footer>
-      <div class="footer">
-        <div class="copy">
-          <p>Copyright &copy; 2024 JungleCook</p>
+      </header>
+      <div id="app"></div>
+      <footer>
+        <div class="footer">
+          <div class="copy">
+            <p>Copyright &copy; 2024 JungleCook</p>
+          </div>
+          <div class="linkList">
+            <ul>
+              <li class="logoutOnly"><a href="#login">Login</a></li>
+              <li class="loginOnly"><a id="signOut" href="#login">Logout</a></li>
+              <li><a href="#">Recipies by Category</a></li>
+              <li><a href="#">Privacy and Copyright</a></li>
+              <li class="loginOnly"><a href="#"></a>Create Recipie</li>
+              <li class="loginOnly"><a href="#">Your Recipies</a></li>
+            </ul>
+          </div>
+          <div class="logos">
+            <ul>
+              <li>
+                <a href="#"
+                  ><img src="assets/images/facebook.svg" alt="Our Facebook!"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="assets/images/instagram.svg" alt="Our Instagram!"
+                /></a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="linkList">
-          <ul>
-            <li class="logoutOnly"><a href="#login">Login</a></li>
-            <li class="loginOnly"><a href="#login">Logout</a></li>
-            <li><a href="#">Recipies by Category</a></li>
-            <li><a href="#">Privacy and Copyright</a></li>
-            <li class="loginOnly"><a href="#"></a>Create Recipie</li>
-            <li class="loginOnly"><a href="#">Your Recipies</a></li>
-          </ul>
-        </div>
-        <div class="logos">
-          <ul>
-            <li>
-              <a href="#"
-                ><img src="assets/images/facebook.svg" alt="Our Facebook!"
-              /></a>
-            </li>
-            <li>
-              <a href="#"
-                ><img src="assets/images/instagram.svg" alt="Our Instagram!"
-              /></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
+
     <script src="lib/jquery-3.7.1.min.js"></script>
     <script src="app/app.js"></script>
   </body>

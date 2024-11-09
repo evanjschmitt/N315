@@ -45,7 +45,7 @@
       border: none;
       width: 200px;
       height: 50px;
-      font-family: Caveat ;
+      font-family: Caveat;
       font-size: 25px;
       &:hover {
         cursor: pointer;
@@ -54,11 +54,31 @@
   }
 }
 
-@media (max-width: 700px) { 
-    .loginContainer {
-        flex-direction: column;
-        .loginForm {
-            margin-top: 50px;
-        }
+//Autofill Styling Fix
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  background-color: #ffd972 !important; // Match your standard background color
+  color: black !important; // Match your text color
+  border-bottom: 2px solid black !important; // Match your border color if needed
+  -webkit-box-shadow: 0 0 0px 1000px #ffd972 inset; // Prevents any "highlighting" effect
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.background.yellow {
+  &::after {
+    background-color: #ffd972 !important; /* Use !important to override */
+  }
+}
+
+@media (max-width: 700px) {
+  .loginContainer {
+    flex-direction: column;
+    .loginForm {
+      margin-top: 50px;
     }
+  }
+  .background.yellow {
+    height: 118%;
+  }
 }

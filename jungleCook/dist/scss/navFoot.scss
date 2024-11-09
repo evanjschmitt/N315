@@ -68,12 +68,14 @@
 }
 
 .footer {
-  width: 90%; // Full width
+  width: 95%; // Full width
+  height: 50px;
   position: relative; // Use fixed if you want it to stay at the bottom
   bottom: 0;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-around; // Adjust alignment as needed
+  justify-content: space-between; // Adjust alignment as needed
   font-size: 15px;
   font-family: LatoItalic;
 
@@ -98,6 +100,23 @@
       }
     }
   }
+
+  .copy {
+    p {
+      font-family: LatoItalic;
+    }
+  }
+
+  .logos {
+    ul {
+      li {
+        margin-left: 25px;
+        img {
+          width: 25px;
+        }
+      }
+    }
+  }
 }
 
 //Logged In Button Styling
@@ -105,6 +124,7 @@
   display: none;
 }
 
+//END NORMAL STYLING
 //MQ
 @media (max-width: 700px) {
   body {
@@ -151,14 +171,22 @@
     z-index: 2;
     margin-top: 50px;
   }
+  .nav li {
+    margin-bottom: 20px;
+  }
+  .nav-button,
+  .loginOnly {
+    align-self: center;
+  }
 
   .hamburger-menu {
     display: block;
     margin-right: 50px;
-    font-size: 30px;
+    font-size: 40px;
+    margin-left: auto;
   }
 
   .footer {
-    font-size: smaller;
+    font-size: 10px;
   }
 }

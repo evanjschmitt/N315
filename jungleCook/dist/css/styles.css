@@ -68,12 +68,14 @@
 }
 
 .footer {
-  width: 90%;
+  width: 95%;
+  height: 50px;
   position: relative;
   bottom: 0;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 15px;
   font-family: LatoItalic;
 }
@@ -95,6 +97,15 @@
 }
 .footer ul li img {
   width: 20px;
+}
+.footer .copy p {
+  font-family: LatoItalic;
+}
+.footer .logos ul li {
+  margin-left: 25px;
+}
+.footer .logos ul li img {
+  width: 25px;
 }
 
 .loginOnly {
@@ -141,13 +152,21 @@
     z-index: 2;
     margin-top: 50px;
   }
+  .nav li {
+    margin-bottom: 20px;
+  }
+  .nav-button,
+  .loginOnly {
+    align-self: center;
+  }
   .hamburger-menu {
     display: block;
     margin-right: 50px;
-    font-size: 30px;
+    font-size: 40px;
+    margin-left: auto;
   }
   .footer {
-    font-size: smaller;
+    font-size: 10px;
   }
 }
 @font-face {
@@ -181,7 +200,6 @@
 .circle-container {
   width: 357px;
   height: 357px;
-  margin-top: 150px;
   /* background-color: lightyellow; */
   position: relative;
 }
@@ -283,12 +301,29 @@
   cursor: pointer;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  background-color: #ffd972 !important;
+  color: black !important;
+  border-bottom: 2px solid black !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffd972 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.background.yellow::after {
+  background-color: #ffd972 !important; /* Use !important to override */
+}
+
 @media (max-width: 700px) {
   .loginContainer {
     flex-direction: column;
   }
   .loginContainer .loginForm {
     margin-top: 50px;
+  }
+  .background.yellow {
+    height: 118%;
   }
 }
 * {
@@ -322,6 +357,12 @@ header {
   font-size: 25px;
 }
 
+.wholeSite {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 #app {
   padding: 30px;
   display: flex;
@@ -346,9 +387,5 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(242, 92, 84, 0.4);
-}
-
-.background.yellow::after {
-  background-color: #FFD972 !important; /* Use !important to override */
+  background-color: rgba(242, 92, 84, 0.5);
 }
