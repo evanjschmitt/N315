@@ -1,4 +1,4 @@
-# Homework07: JungleCook Login Functions
+# Homework08: JungleCook Completion
 
 ## Purpose
 

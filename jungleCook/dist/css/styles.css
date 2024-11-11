@@ -1,3 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+  font-family: lato;
+}
+
+header {
+  color: black;
+  padding: 0.5rem 0;
+  font-family: Caveat;
+  font-size: 25px;
+}
+
+.wholeSite {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#app {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.background {
+  min-height: 100vh;
+  width: 100vw;
+  z-index: -2;
+  position: absolute;
+  background-image: url(../assets/images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 92, 84, 0.5);
+}
+
 .navHolder {
   margin-top: 50px;
   display: flex;
@@ -323,69 +387,30 @@ input:-webkit-autofill:focus {
     margin-top: 50px;
   }
   .background.yellow {
-    height: 118%;
+    height: 125%;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-bottom: 16px;
-  font-family: lato;
-}
-
-header {
-  color: black;
-  padding: 0.5rem 0;
-  font-family: Caveat;
-  font-size: 25px;
-}
-
-.wholeSite {
+.recipie {
+  width: 500px;
+  min-height: 400px;
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
-
-#app {
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-}
-
-.background {
-  min-height: 100vh;
-  width: 100vw;
-  z-index: -2;
-  position: absolute;
-  background-image: url(../assets/images/hero.jpg);
-  background-size: cover;
-  background-position: center;
-}
-.background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.recipie .recipieDesc {
+  width: calc(100% - 200px);
+  padding: 20px;
   height: 100%;
-  background-color: rgba(242, 92, 84, 0.5);
+  border-radius: 10px;
+  background-color: white;
+}
+.recipie .recipieDesc ul {
+  list-style: none;
+}
+.recipie .recipieDesc ol {
+  margin-left: 15px;
+}
+.recipie .recipieImgHolder {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
 }

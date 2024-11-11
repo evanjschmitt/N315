@@ -1,0 +1,28 @@
+.recipie {
+  width: 500px;
+  min-height: 400px;
+  // background-color: beige;
+  display: flex;
+  // border-radius: 10px;
+  .recipieDesc {
+    // background-color: red;
+    width: calc(100% - 200px);
+    padding: 20px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: white;
+    ul {
+      list-style: none;
+    }
+    ol {
+      margin-left: 15px;
+    }
+  }
+  .recipieImgHolder {
+    // background-color: blue;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+}

@@ -23,7 +23,7 @@ function changeRoute() {
 
   //CHANGE BG TO YELLOW ON LOGIN
   if (pageID === "login") {
-    console.log("On Login Page");
+    // console.log("On Login Page");
     document.querySelector(".background").classList.add("yellow");
   } else {
     document.querySelector(".background").classList.remove("yellow");

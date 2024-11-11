@@ -1,0 +1,65 @@
+//Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+  font-family: lato;
+}
+
+//Header Styling
+header {
+  // background-color: darkgreen;
+  color: black;
+  padding: 0.5rem 0;
+  font-family: Caveat;
+  font-size: 25px;
+}
+
+//App Styling
+.wholeSite {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#app {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.background {
+  min-height: 100vh;
+  width: 100vw;
+  z-index: -2;
+  position: absolute;
+  background-image: url(../assets/images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(242, 92, 84, 0.5);
+  }
+}

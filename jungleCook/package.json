@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "serve": "live-server",
+    "serve": "live-server dist",
     "compile": "sass dist/scss/styles.scss dist/css/styles.css -w --no-source-map",
     "build-webpack": "webpack"
   },
