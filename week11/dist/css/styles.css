@@ -98,3 +98,28 @@ h1, h2, h3, h4, h5, h6, p {
 .form .submitBtn:hover {
   cursor: pointer;
 }
+
+.recipie {
+  width: 500px;
+  min-height: 400px;
+  background-color: beige;
+  display: flex;
+}
+.recipie .recipieDesc {
+  width: calc(100% - 200px);
+  padding: 20px;
+  height: 100%;
+}
+.recipie .recipieDesc ul {
+  list-style: none;
+}
+.recipie .recipieDesc ol {
+  margin-left: 15px;
+}
+.recipie .recipieImgHolder {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}

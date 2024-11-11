@@ -1,8 +1,9 @@
 import * as $ from "jquery";
 
+const userRecipies = [];
 function initRecipieListeners() {
-    console.log("Listener HI")
-  const userRecipies = [];
+  console.log("Listener HI");
+
   $("#ingredBtn").on("click", function () {
     // console.log("Button Clicked :)");
     let ingredCount = $(".ingredients input").length;
@@ -40,7 +41,7 @@ function initRecipieListeners() {
 }
 
 function removeRecipieListeners() {
-    console.log("Listener BYE")
+  console.log("Listener BYE");
   $("#ingredBtn").off("click");
   $("#stepBtn").off("click");
   $(".submitBtn").off("click");
@@ -59,6 +60,34 @@ function changeRoute() {
       $("#app").html(data);
       if (pageID == "recipieForm") {
         initRecipieListeners();
+      } else if (pageID == "showAllRecipies") {
+        let recipieCode = "";
+        $.each(userRecipies, function (index, recipie) {
+          recipieCode += `<div class="recipie">
+      <div class="recipieImgHolder">
+        <img src="${recipie.imageURL}" alt="${recipie.recipieName} image" />
+      </div>
+      <div class="recipieDesc">
+        <h3>${recipie.recipieName}</h3>
+        <p>Ingredients:</p>
+        <ul>
+          <li>Lorem, ipsum.</li>
+          <li>Ea, atque?</li>
+          <li>Illo, ex.</li>
+          <li>Ad, nulla!</li>
+        </ul>
+        <p>Steps:</p>
+        <ol>
+          <li>Lorem ipsum dolor sit.</li>
+          <li>Minima delectus voluptates tenetur.</li>
+          <li>Autem aliquid quaerat facilis!</li>
+          <li>Laudantium fuga at omnis.</li>
+        </ol>
+      </div>
+    </div>`;
+        });
+        $("#recipieList").append(userRecipies)
+        removeRecipieListeners();
       } else {
         removeRecipieListeners();
       }
@@ -77,6 +106,6 @@ function initURLListener() {
 }
 
 $(document).ready(function () {
-//   initListeners();
+  //   initListeners();
   initURLListener();
 });
