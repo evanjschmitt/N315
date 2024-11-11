@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+#app {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav {
+  width: 100%;
+  background-color: lightgreen;
+  min-height: 50px;
+}
+.nav nav {
+  margin: 0 auto;
+}
+.nav nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style-type: none;
+  padding-top: 15px;
+}
+.nav nav a {
+  text-decoration: none;
+  font-weight: bolder;
+  transition: all 0.2s ease-in-out;
+  color: black;
+}
+.nav nav a:hover {
+  color: beige;
+}
+
+.form {
+  width: 800px;
+}
+.form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.form input:focus {
+  outline: none;
+}
+.form p {
+  margin-bottom: 8px;
+  font-size: 15px;
+  margin-top: 30px;
+}
+.form .ingredients,
+.form .steps {
+  position: relative;
+}
+.form .addBtn {
+  padding: 8px 13px;
+  background-color: rgb(151, 211, 61);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+.form .addBtn:hover {
+  cursor: pointer;
+}
+.form .submitBtn {
+  background-color: rgb(151, 211, 61);
+  padding: 20px;
+  border-bottom: none;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+.form .submitBtn:hover {
+  cursor: pointer;
+}

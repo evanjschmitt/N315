@@ -1,0 +1,25 @@
+.nav {
+    width: 100%;
+    background-color: lightgreen;
+    min-height: 50px;
+    nav {
+        margin: 0 auto;
+        ul {
+            display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        list-style-type: none;
+        padding-top: 15px;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bolder;
+            transition: all .2s ease-in-out;
+            color: black;
+            &:hover {
+                // text-decoration: underline;
+                color: beige;
+            }
+        }
+    }
+}
