@@ -1,0 +1,18 @@
+{
+  "Pets": [
+    {
+      "petName": "Toothless",
+      "breed": "Axolotl",
+      "age": "5",
+      "imgUrl": "toothless.jpg",
+      "desc": "My Cute Axolotl, Toothless"
+    },
+    {
+      "petName": "Luna",
+      "breed": "Kitty",
+      "age": "4",
+      "imgUrl": "luna.jpg",
+      "desc": "My Boyfriend's Cat :P"
+    }
+  ]
+}

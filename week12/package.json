@@ -8,15 +8,20 @@
   },
   "scripts": {
     "serve": "live-server",
-    "wpserve": "live-server dist",
+    "compile-sass": "sass scss/styles.scss css/styles.css -w --no-source-map",
     "build-webpack": "webpack",
-    "webpack-sass": "sass dist/scss/styles.scss dist/css/styles.css -w --no-source-map",
-    "compile-sass": "sass dist/scss/styles.scss dist/css/styles.css -w --no-source-map"
+    "wpserve": "live-server dist",
+    "webpack-sass": "sass dist/scss/styles.scss dist/css/styles.css -w --no-source-map"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.78.0"
+    "sass": "^1.78.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "webpack": "^5.96.1"
   }
 }

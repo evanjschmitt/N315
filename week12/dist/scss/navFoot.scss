@@ -1,0 +1,16 @@
+.header nav {
+    background-color: darkslategray;
+    height: 50px;
+    
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-top: 13px;
+        list-style: none;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+}
