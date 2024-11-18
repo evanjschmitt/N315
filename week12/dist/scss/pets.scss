@@ -1,11 +1,139 @@
 .pets {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Responsive grid layout */
+  gap: 20px; /* Space between the cards */
+  padding: 20px; /* Add some padding around the grid */
+
+  .pet {
+    background-color: #fff; /* Card background color */
+    border: 1px solid #ddd; /* Light border around the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+    overflow: hidden; /* Ensures content doesn't spill out of the card */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+
+    &:hover {
+      transform: scale(1.05); /* Slightly enlarges card on hover */
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    }
+
+    .petImg {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      // position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures image is cropped and fills the container */
+        object-position: center; /* Centers the image for better crop */
+      }
+    }
+
+    .petInfo {
+      padding: 15px;
+
+      p {
+        margin: 0 0 10px; /* Space between text lines */
+        color: #333; /* Darker text color */
+        font-size: 14px;
+
+        &:last-child {
+          margin-bottom: 0; /* Removes margin after the last paragraph */
+        }
+      }
+      .view {
+        display: inline-block; /* Makes the button-size adjustable */
+        margin-top: 10px; /* Adds space above the button */
+        padding: 10px 15px; /* Adds padding inside the button */
+        background-color: #73469c;
+        color: #fff;
+        text-align: center; /* Centers text inside the button */
+        border-radius: 5px; /* Rounded corners for the button */
+        font-size: 14px;
+        text-decoration: none; /* Removes underline if the button is a link */
+        cursor: pointer; /* Changes cursor to pointer */
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #472169; /* Darker shade on hover */
+        }
+      }
+    }
+  }
+}
+
+.petView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fdf2e9; // Slightly lighter background for contrast
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); // Enhanced shadow for interest
+  border: 3px solid #ff7e5f; // Highlighted border to draw attention
+
   .petImg {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 300px; // Larger image for emphasis
+    overflow: hidden;
+    border-radius: 10px;
     img {
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover; // Ensures the image fills the space nicely
+    }
+  }
+
+  .petInfo {
+    text-align: center;
+    margin-top: 20px;
+
+    h2 {
+      font-size: 1.8rem;
+      color: #ff7e5f; // Same color as border for consistency
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #4a4a4a;
+      margin: 5px 0;
+    }
+
+    .specialTrait {
+      font-weight: bold;
+      color: #ff7e5f; // Highlight certain traits or details
+    }
+  }
+
+  .actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    .actionButton {
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background-color: #ff7e5f;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+
+      &:hover {
+        background-color: #fc5c2e; // Slightly darker shade on hover
+        transform: scale(1.05);
+      }
     }
   }
 }

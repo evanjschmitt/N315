@@ -1,6 +1,7 @@
 {
   "Pets": [
     {
+      "id": 0,
       "petName": "Toothless",
       "breed": "Axolotl",
       "age": "5",
@@ -8,6 +9,7 @@
       "desc": "My Cute Axolotl, Toothless"
     },
     {
+      "id": 1,
       "petName": "Luna",
       "breed": "Kitty",
       "age": "4",

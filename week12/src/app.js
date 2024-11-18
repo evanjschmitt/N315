@@ -1,4 +1,4 @@
-import { getData } from "./model.js";
+import { getData, } from "./model.js";
 import * as $ from "jquery";
 import "./model.js";
 
