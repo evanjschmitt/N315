@@ -1,28 +1,124 @@
-.recipie {
-  width: 500px;
-  min-height: 400px;
-  // background-color: beige;
-  display: flex;
-  // border-radius: 10px;
-  .recipieDesc {
-    // background-color: red;
-    width: calc(100% - 200px);
+.allRecipies {
+  .recHeader {
+    font-family: CaveatBold;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px; // Add spacing below the header
+  }
+
+  .recipieList {
+    display: grid; // Enable CSS Grid
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(500px, 1fr)
+    ); // Responsive columns
+    gap: 20px; // Space between recipes
     padding: 20px;
-    height: 100%;
-    border-radius: 10px;
-    background-color: white;
-    ul {
-      list-style: none;
+
+    //List MQ
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
     }
-    ol {
-      margin-left: 15px;
+
+    .recipie {
+      display: flex; // Flexbox for side-by-side layout
+      flex-direction: row;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      height: 275px;
+
+      .recipieImgHolder {
+        flex: 3;
+        max-width: 300px;
+        overflow: hidden;
+        border-radius: 25px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .recipieDesc {
+        flex: 2;
+        padding: 40px;
+        padding-top: 20px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 25px;
+
+        .header {
+          font-family: LatoBlack;
+          font-size: 20px;
+          border-bottom: 2px solid black;
+          margin-bottom: 10px;
+        }
+
+        .recDesc {
+          font-size: 12px;
+          // margin-bottom: 15px;
+          // padding-bottom: 20px;
+        }
+
+        .descCounter {
+          display: flex;
+          align-items: center;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          margin-bottom: 20px;
+          img {
+            width: 40px;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+
+      .recipie {
+        flex-direction: column; // Stack the image and description
+        height: auto; // Allow flexible height
+        .recipieImgHolder {
+          flex: 3; // 3/5ths of the element
+          max-width: 100%; // Make it responsive
+          height: auto; // Adjust height automatically
+          img {
+            width: 100%;
+            height: auto; // Maintain aspect ratio
+          }
+        }
+
+        .recipieDesc {
+          flex: 2; // 2/5ths of the element
+          width: 100%; // Full width
+          padding: 20px;
+          border-radius: 0; // Optional: adjust border radius for stacked layout
+        }
+      }
     }
   }
-  .recipieImgHolder {
-    // background-color: blue;
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 10px;
+}
+
+.recListBG {
+  min-height: 100vh;
+  width: 100vw;
+  z-index: -2;
+  position: absolute;
+  background-image: url(../assets/images/recipe-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(167, 232, 189, 0.644);
   }
 }

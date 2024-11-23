@@ -65,6 +65,8 @@ input:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
+
+//BG Coloring
 .background.yellow {
   &::after {
     background-color: #ffd972 !important; /* Use !important to override */

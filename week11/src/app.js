@@ -47,7 +47,6 @@ function removeRecipieListeners() {
   $(".submitBtn").off("click");
 }
 
-// $(document).ready(function () {});
 
 function changeRoute() {
   let hashTag = window.location.hash;
@@ -56,7 +55,6 @@ function changeRoute() {
 
   if (pageID != "") {
     $.get(`pages//${pageID}/${pageID}.html`, function (data) {
-      //   console.log("data " + data);
       $("#app").html(data);
       if (pageID == "recipieForm") {
         initRecipieListeners();
@@ -86,7 +84,7 @@ function changeRoute() {
       </div>
     </div>`;
         });
-        $("#recipieList").append(userRecipies)
+        $("#recipieList").append(userRecipies);
         removeRecipieListeners();
       } else {
         removeRecipieListeners();

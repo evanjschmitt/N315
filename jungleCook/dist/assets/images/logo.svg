@@ -4,6 +4,6 @@
     <circle id="Ellipse_2" data-name="Ellipse 2" cx="15" cy="15" r="15" transform="translate(76 54)" fill="#ffd972"/>
     <circle id="Ellipse_3" data-name="Ellipse 3" cx="27" cy="27" r="27" transform="translate(103 39)" fill="#a7e8bd"/>
     <circle id="Ellipse_4" data-name="Ellipse 4" cx="12" cy="12" r="12" transform="translate(185 57)" fill="#efa7a7"/>
-    <text id="The_Jungle_Cook" data-name="The Jungle Cook" transform="translate(50 74)" font-size="25" font-family="Caveat-Regular, Caveat" letter-spacing="0.1em"><tspan x="0" y="0">The Jungle Cook</tspan></text>
+    <text id="The_Jungle_Cook" data-name="The Jungle Cook" transform="translate(50 74)" font-size="25" letter-spacing="0.1em"><tspan x="0" y="0">The Jungle Cook</tspan></text>
   </g>
 </svg>
