@@ -52,75 +52,89 @@ function removeRecipieListeners() {
 function changeRoute() {
   let hashTag = window.location.hash;
   let pageID = hashTag.replace("#", "");
-  //   console.log(hashTag + ' ' + pageID);
 
+  // Check if there's a page ID and load the page content
   if (pageID != "") {
     $.get(`pages//${pageID}/${pageID}.html`, function (data) {
       $("#app").html(data);
+
+      if (pageID === "recipieForm") {
+        initRecipieListeners();
+      } else if (pageID === "showAllRecipies") {
+        let recipieCode = "";
+        $.each(userRecipies, function (index, recipie) {
+          recipieCode += `<div class="recipie">
+            <div class="recipieImgHolder">
+              <img src="${recipie.imageURL}" alt="${recipie.recipieName} image" />
+            </div>
+            <div class="recipieDesc">
+              <h3>${recipie.recipieName}</h3>
+              <p>Ingredients:</p>
+              <ul>
+                <li>Lorem, ipsum.</li>
+                <li>Ea, atque?</li>
+                <li>Illo, ex.</li>
+                <li>Ad, nulla!</li>
+              </ul>
+              <p>Steps:</p>
+              <ol>
+                <li>Lorem ipsum dolor sit.</li>
+                <li>Minima delectus voluptates tenetur.</li>
+                <li>Autem aliquid quaerat facilis!</li>
+                <li>Laudantium fuga at omnis.</li>
+              </ol>
+            </div>
+          </div>`;
+        });
+        $("#recipieList").append(recipieCode); // Append recipieCode, not userRecipies
+        removeRecipieListeners();
+      } else {
+        removeRecipieListeners();
+      }
     });
   } else {
     $.get(`pages/home/home.html`, function (data) {
-      // console.log("data:", data);
       $("#app").html(data);
     }).fail(function () {
       console.error("Failed to load home.html");
     });
   }
 
+  // CHANGE BACKGROUND BASED ON PAGE ID
+  const background = document.querySelector(".background");
 
-//Recipe Form Listener Toggle
-if (pageID == "recipieForm") {
-  initRecipieListeners();
-} else if (pageID == "showAllRecipies") {
-  let recipieCode = "";
-  $.each(userRecipies, function (index, recipie) {
-    recipieCode += `<div class="recipie">
-<div class="recipieImgHolder">
-  <img src="${recipie.imageURL}" alt="${recipie.recipieName} image" />
-</div>
-<div class="recipieDesc">
-  <h3>${recipie.recipieName}</h3>
-  <p>Ingredients:</p>
-  <ul>
-    <li>Lorem, ipsum.</li>
-    <li>Ea, atque?</li>
-    <li>Illo, ex.</li>
-    <li>Ad, nulla!</li>
-  </ul>
-  <p>Steps:</p>
-  <ol>
-    <li>Lorem ipsum dolor sit.</li>
-    <li>Minima delectus voluptates tenetur.</li>
-    <li>Autem aliquid quaerat facilis!</li>
-    <li>Laudantium fuga at omnis.</li>
-  </ol>
-</div>
-</div>`;
-  });
-  $("#recipieList").append(userRecipies);
-  removeRecipieListeners();
-} else {
-  removeRecipieListeners();
-}
+  // Start the switch statement
+  switch (pageID) {
+    case "login":
+      // Set the yellow background color with transparency for login page
+      background.classList.remove("hero-background", "recListBG");
+      background.style.backgroundImage = "none"; // Ensure background image is removed
+      background.classList.add("login-overlay"); // Add class to apply yellow overlay
+      break;
 
+    case "showAllRecipies":
+      // Set a green background color with recipe-hero.jpg image for showAllRecipies page
+      background.classList.remove("hero-background", "recListBG");
+      background.style.backgroundImage = "url('./assets/images/recipe-hero.jpg')";
+      background.classList.add("recListBG"); // Add green overlay class
+      break;
 
+    case "home":
+      // Set a red background color with hero.jpg image for home page
+      background.classList.remove("hero-background", "recListBG", "login-overlay");
+      background.style.backgroundImage = "url('./assets/images/hero.jpg')";
+      background.classList.add("hero-background"); // Add red overlay class
+      break;
 
-
-
-
-  //CHANGE BG TO YELLOW ON LOGIN
-  if (pageID === "login") {
-    // console.log("On Login Page");
-    document.querySelector(".background").classList.add("yellow");
-  } else {
-    document.querySelector(".background").classList.remove("yellow");
-  }
-
-  if (pageID === "showAllRecipies") {
-    console.log("On Recipe Page");
-    document.querySelector(".background").classList.add("recListBG");
-  } else {
-    document.querySelector(".background").classList.remove("recListBG");
+    default:
+      // Default white background with no overlay for other pages
+      background.classList.remove(
+        "hero-background",
+        "recListBG",
+        "login-overlay"
+      );
+      background.style.backgroundImage = "none"; // No image
+      break;
   }
 }
 

@@ -46,13 +46,20 @@ header {
 }
 
 .background {
-  min-height: 100vh;
+  min-height: 100%;
+  height: 100%;
   width: 100vw;
-  z-index: -2;
-  position: absolute;
-  background-image: url(../assets/images/hero.jpg);
+  position: fixed;
+  top: 0;
+  left: 0;
   background-size: cover;
   background-position: center;
+  z-index: -2;
+
+  /* Use flex to make it expand with content */
+  display: flex;
+  flex-direction: column;
+
   &::after {
     content: "";
     position: absolute;
@@ -60,6 +67,19 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(242, 92, 84, 0.5);
+  }
+  &.hero-background::after {
+    background-color: rgba(242, 92, 84, 0.5); // Red with transparency
+
+  }
+
+  // Yellow overlay for login page
+  &.login-overlay::after {
+    background-color: #FFD972; // Yellow with transparency
+  }
+
+  // Green overlay for showAllRecipies page
+  &.recListBG::after {
+    background-color: #a7e8bda9; // Green with transparency
   }
 }
