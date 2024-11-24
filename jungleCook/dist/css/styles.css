@@ -428,8 +428,22 @@ input:-webkit-autofill:focus {
   display: flex;
   flex-direction: row;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
   overflow: hidden;
   height: 275px;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+.allRecipies .recipieList .recipie:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.allRecipies .recipieList .recipie a {
+  text-decoration: none;
+  color: inherit;
+}
+.allRecipies .recipieList .recipie a:hover {
+  text-decoration: none;
 }
 .allRecipies .recipieList .recipie .recipieImgHolder {
   flex: 3;
@@ -496,4 +510,65 @@ input:-webkit-autofill:focus {
     padding: 20px;
     border-radius: 0;
   }
+}
+
+.form {
+  width: 800px;
+}
+.form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.form input:focus {
+  outline: none;
+}
+.form p {
+  margin-bottom: 8px;
+  font-size: 15px;
+  margin-top: 30px;
+}
+.form .imageHolder {
+  display: flex;
+  align-items: center;
+}
+.form .imageHolder input {
+  max-width: 300px;
+}
+.form .imageHolder img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.form .ingredients,
+.form .steps {
+  position: relative;
+}
+.form .addBtn {
+  padding: 8px 13px;
+  background-color: rgb(151, 211, 61);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+.form .addBtn:hover {
+  cursor: pointer;
+}
+.form .submitBtn {
+  background-color: rgb(151, 211, 61);
+  padding: 20px;
+  border-bottom: none;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+.form .submitBtn:hover {
+  cursor: pointer;
 }

@@ -25,11 +25,11 @@ export function signUserUp(fn, ln, email, password) {
   createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
       console.log("User Created");
+
     })
     .catch((error) => {
       console.error("Signup Error:", error);
     });
-  //   console.log("model.js:", fn, ln, email, password);
 }
 
 export function signUserIn(email, password) {

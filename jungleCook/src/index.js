@@ -126,6 +126,12 @@ function changeRoute() {
       background.classList.add("hero-background"); // Add red overlay class
       break;
 
+      case "":
+      // Set a red background color with hero.jpg image for home page
+      background.classList.remove("hero-background", "recListBG", "login-overlay");
+      background.style.backgroundImage = "url('./assets/images/hero.jpg')";
+      background.classList.add("hero-background"); // Add red overlay class
+      break;
     default:
       // Default white background with no overlay for other pages
       background.classList.remove(
@@ -137,12 +143,12 @@ function changeRoute() {
       break;
   }
 }
-
 function initURLListener() {
   $(window).on("hashchange", changeRoute);
   changeRoute();
 }
 
+//Hamburger Menu Listener
 const hamburgerMenu = document.querySelector(".hamburger-menu"); //JS Way
 const nav = document.querySelector(".nav");
 
@@ -150,6 +156,24 @@ hamburgerMenu.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
+window.displayImage = function () {
+  const input = document.getElementById("imageURL");
+  const img = document.getElementById("coverImg");
+
+  // Check if a file was selected
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    
+    reader.onload = function (e) {
+      img.src = e.target.result;
+      img.style.display = "block";
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+//Other Listeners
 function initListeners() {
   $("nav a").on("click", function (e) {
     closeNav();
