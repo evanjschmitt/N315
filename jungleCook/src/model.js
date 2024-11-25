@@ -78,73 +78,73 @@ export function signUserOut() {
     });
 }
 
-export function getData() {
-  $.getJSON("data/data.json", function (data) {
-    console.log("Loaded data:", data); // Debug: Ensure data is loaded correctly
+function forceRepaint() {
+  const container = $(".userRecipes");
+  const display = container.css("display");
+  container.css("display", "none");
+  container.css("display", display);
+  console.log("Repainted");
+}
 
-    // Access the 'Recipes' array
+export function getData() {
+  // Show loading spinner (optional)
+  $(".userRecipes").html("<p>Loading recipes...</p>");
+
+  $.getJSON("data/data.json", function (data) {
+    // console.log(data);
+
     const recipes = data.Recipes;
 
-    if (!Array.isArray(recipes)) {
-      console.error("Recipes is not an array:", recipes);
-      return;
-    }
+    // if (!Array.isArray(recipes)) {
+    //   console.error("Recipes is not an array:", recipes);
+    //   $(".userRecipes").html("<p>Error: Could not load recipes.</p>");
+    //   return;
+    // }
 
-    console.log("Recipes array:", recipes); // Debug: Log the array of recipes
+    $(".userRecipes").empty();
 
-    // Ensure the container exists
-    if (!$(".userRecipes").length) {
-      console.error("Container '.userRecipes' not found in the DOM.");
-      return;
-    }
-
-    // Iterate over the 'Recipes' array
     $.each(recipes, (idx, recipe) => {
-      console.log("Processing individual recipe:", recipe); // Debug individual recipe
-
+      // console.log("Processing individual recipe:", recipe);
       const ingredients = Array.isArray(recipe.ingredients)
         ? recipe.ingredients
         : [];
       const steps = Array.isArray(recipe.steps) ? recipe.steps : [];
 
       let recString = `
-      <div class="recipie">
-      <div class="recipieImgHolder">
-        <img src="./assets/images/car.jpg" alt="This Is The Image" />
-      </div>
-      <div class="recipieDesc">
-        <h3 class="header">${recipe.name || "Not specified"}</h3>
-        <p class="recDesc">
-         ${recipe.recipeDesc || "Not specified"}
-        </p>
-        <span class="descCounter">
-          <img src="./assets/images/time.svg" alt="" /> ${
-            recipe.totalTime || "Not specified"
-          }
-        </span>
-        <span class="descCounter">
-          <img src="./assets/images/servings.svg" alt="" /> ${
-            recipe.servingSize || "Not specified"
-          }
-        </span>
-        <h3>Ingredients:</h3>
-          <ul>
-            ${ingredients
-              .map((ingredient) => `<li>${ingredient}</li>`)
-              .join("")}
-          </ul>
-          <h3>Steps:</h3>
-          <ol>
-            ${steps.map((step) => `<li>${step}</li>`).join("")}
-          </ol>
-      </div>
+      <div class="allRecipies">
+  <div class="recipieList">
+        <div class="recipie">
+          <div class="recipieImgHolder">
+            <img src="${
+              recipe.imageURL || "./assets/images/placeholder.jpg"
+            }" alt="Recipe Image" />
+          </div>
+          <div class="recipieDesc">
+            <h3 class="header">${recipe.name || "Not specified"}</h3>
+            <p class="recDesc">${
+              recipe.recipeDesc || "No description available"
+            }</p>
+            <span class="descCounter">
+              <img src="./assets/images/time.svg" alt="Time to Cook" /> ${
+                recipe.totalTime || "Not specified"
+              }
+            </span>
+            <span class="descCounter">
+              <img src="./assets/images/servings.svg" alt="Serving Size" /> ${
+                recipe.servingSize || "Not specified"
+              }
+            </span>
+      
+          </div>
+        </div>
+        </div>
+        </div>
       `;
 
-      console.log("Generated HTML for this recipe:", recString); // Debug HTML
-
       $(".userRecipes").append(recString); // Append to container
+      // forceRepaint();
     });
   }).fail(function () {
-    alert("Error: Could not load recipes.");
+    $(".userRecipes").html("<p>Error: Could not load recipes.</p>");
   });
 }

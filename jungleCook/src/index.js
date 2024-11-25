@@ -244,5 +244,10 @@ function initListeners() {
 $(document).ready(function () {
   initURLListener();
   initListeners();
-  getData();
+  const checkUserRecipes = setInterval(() => {
+    if ($(".userRecipes").length > 0) {
+      clearInterval(checkUserRecipes); // Stop checking
+      getData(); // Now safe to call
+    }
+  }, 100); // Check every 100ms
 });
