@@ -3,35 +3,40 @@
     <h1>Add A Recipie</h1>
   </div>
   <section class="imageHolder">
+    <label for="imageURL">Add Recipe Image</label>
     <input
+      class="custom-file-input"
       type="file"
       id="imageURL"
       accept="image/*"
       onchange="displayImage()"
     />
-    <img
+  </section>
+  <img
       id="coverImg"
       src="#"
       alt="Recipe Cover Img"
       style="display: none; max-width: 100px; max-height: 100px"
     />
-  </section>
 
-  <input type="text" id="recipieName" placeholder="Recipie Name..." />
+  <input type="text" id="recipieName" placeholder="Recipie Name" />
+  <input type="text" id="recipeDesc" placeholder="Recipie Description" />
+  <input type="text" id="totalTime" placeholder="Recipie Total Time" />
+  <input type="text" id="serveSize" placeholder="Recipie Serving Size" />
 
   <div class="ingredients">
     <p>Enter Ingredients</p>
-    <input type="text" id="ingredient01" placeholder="Ingredient 1" />
-    <input type="text" id="ingredient02" placeholder="Ingredient 2" />
-    <input type="text" id="ingredient03" placeholder="Ingredient 3" />
+    <input type="text" id="ingredient01" placeholder="Ingredient #1" />
+    <input type="text" id="ingredient02" placeholder="Ingredient #2" />
+    <input type="text" id="ingredient03" placeholder="Ingredient #3" />
     <span class="addBtn" id="ingredBtn">+</span>
   </div>
 
   <div class="steps">
     <p>Enter Steps</p>
-    <input type="text" id="step01" placeholder="Step 1" />
-    <input type="text" id="step02" placeholder="Step 2" />
-    <input type="text" id="step03" placeholder="Step 3" />
+    <input type="text" id="step01" placeholder="Instruction #1" />
+    <input type="text" id="step02" placeholder="Instruction #2" />
+    <input type="text" id="step03" placeholder="Instruction #3" />
     <span class="addBtn" id="stepBtn">+</span>
   </div>
   <input class="submitBtn" type="submit" value="Create Recipie" />

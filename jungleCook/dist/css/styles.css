@@ -85,6 +85,11 @@ header {
   font-weight: bold;
   color: wheat;
   margin-left: 25px;
+  margin-top: -25px;
+}
+
+.navHolder .mobileLogo {
+  display: none;
 }
 
 .navHolder ul {
@@ -196,10 +201,14 @@ header {
   .navHolder {
     margin-top: 25px;
   }
-  .navHolder .logo {
+  .navHolder .mobileLogo {
+    display: block;
     font-size: 1.2rem;
     z-index: 2;
     margin-left: 20px;
+  }
+  .navHolder .logo {
+    display: none;
   }
   .clickContainer {
     display: block;
@@ -233,8 +242,8 @@ header {
     margin-bottom: 20px;
   }
   .nav-button,
-  .loginOnly {
-    align-self: center;
+  .loginOnly, .logoutOnly {
+    margin: 0 auto;
   }
   .hamburger-menu {
     display: block;
@@ -522,6 +531,7 @@ input:-webkit-autofill:focus {
   margin-bottom: 15px;
   border: none;
   border-bottom: 2px solid black;
+  font-family: Lato;
 }
 .form input:focus {
   outline: none;
@@ -533,10 +543,41 @@ input:-webkit-autofill:focus {
 }
 .form .imageHolder {
   display: flex;
+  position: relative;
   align-items: center;
 }
-.form .imageHolder input {
-  max-width: 300px;
+.form .imageHolder label {
+  position: absolute;
+  font-family: Lato;
+  border-bottom: 2px solid black;
+}
+.form .imageHolder .custom-file-input {
+  width: 90%;
+  margin-left: 100px;
+  border-bottom: 2px solid black;
+  padding-right: 110px;
+  box-sizing: border-box;
+  margin-top: -7px;
+}
+.form .imageHolder .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.form .imageHolder .custom-file-input::before {
+  content: "Attach File";
+  font-family: Caveat;
+  background: #EFA7A7;
+  border-radius: 25px;
+  width: 80px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: -20%;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15pt;
 }
 .form .imageHolder img {
   width: 300px;
@@ -544,31 +585,38 @@ input:-webkit-autofill:focus {
   object-fit: cover;
   overflow: hidden;
   border-radius: 10px;
+  margin-left: 25px;
+  margin-top: -50px;
 }
-.form .ingredients,
-.form .steps {
+
+.ingredients,
+.steps {
   position: relative;
 }
-.form .addBtn {
+
+.addBtn {
   padding: 8px 13px;
-  background-color: rgb(151, 211, 61);
+  background-color: #EFA7A7;
   border-radius: 50%;
   position: absolute;
   bottom: 10px;
   right: 0;
 }
-.form .addBtn:hover {
+.addBtn:hover {
   cursor: pointer;
 }
-.form .submitBtn {
-  background-color: rgb(151, 211, 61);
+
+.submitBtn {
+  background-color: #EFA7A7;
   padding: 20px;
-  border-bottom: none;
-  width: 50%;
+  border: none !important;
+  max-width: 50%;
   margin: 0 auto;
   border-radius: 10px;
+  font-family: Caveat !important;
+  font-size: 20px;
   margin-top: 25px;
 }
-.form .submitBtn:hover {
+.submitBtn:hover {
   cursor: pointer;
 }

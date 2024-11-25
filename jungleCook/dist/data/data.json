@@ -1,0 +1,22 @@
+{
+  "Recipes": [
+    {
+      "id": 1,
+      "name": "Spaghetti Carbonara",
+      "imageURL": "https://picsum.photos/400",
+      "timeToCook": "30 minutes",
+      "servingSize": 4,
+      "steps": [
+        "Boil water in a large pot and cook the spaghetti according to package instructions.",
+        "In a separate pan, cook diced pancetta until crispy."
+      ],
+      "ingredients": ["400g spaghetti", "150g pancetta"]
+    },
+    {
+      "id": 2,
+      "name": "Incomplete Recipe",
+      "timeToCook": "15 minutes",
+      "servingSize": 2
+    }
+  ]
+}

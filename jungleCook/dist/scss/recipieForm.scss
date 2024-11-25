@@ -1,3 +1,5 @@
+@import "var.scss";
+
 .form {
   width: 800px;
 
@@ -8,6 +10,7 @@
     margin-bottom: 15px;
     border: none;
     border-bottom: 2px solid black;
+    font-family: Lato;
     &:focus {
       outline: none;
     }
@@ -18,11 +21,46 @@
     margin-top: 30px;
   }
   .imageHolder {
+    // display: inline-block;
     display: flex;
+    position: relative;
     align-items: center;
 
-    input {
-      max-width: 300px;
+    label {
+      position: absolute;
+      font-family: Lato;
+      border-bottom: 2px solid black;
+    }
+
+    .custom-file-input {
+      width: 90%;
+      margin-left: 100px;
+      border-bottom: 2px solid black;
+      padding-right: 110px;
+      box-sizing: border-box;
+      margin-top: -7px;
+
+      &::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+
+      &::before {
+        content: "Attach File";
+        font-family: Caveat;
+        background: $site-red;
+        border-radius: 25px;
+        width: 80px;
+        height: 20px;
+        position: absolute;
+        right: 10px; // Position the button on the right
+        top: -20%;
+        padding: 10px 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15pt;
+      }
     }
     img {
       width: 300px;
@@ -30,35 +68,40 @@
       object-fit: cover;
       overflow: hidden;
       border-radius: 10px;
+      margin-left: 25px;
+      margin-top: -50px;
     }
   }
-  .ingredients,
-  .steps {
-    position: relative;
-  }
+}
 
-  .addBtn {
-    padding: 8px 13px;
-    background-color: rgb(151, 211, 61);
-    border-radius: 50%;
-    position: absolute;
-    bottom: 10px;
-    right: 0;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-  .submitBtn {
-    background-color: rgb(151, 211, 61);
-    padding: 20px;
-    border-bottom: none;
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 10px;
-    margin-top: 25px;
+.ingredients,
+.steps {
+  position: relative;
+}
 
-    &:hover {
-      cursor: pointer;
-    }
+.addBtn {
+  padding: 8px 13px;
+  background-color: $site-red;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.submitBtn {
+  background-color: $site-red;
+  padding: 20px;
+  border: none !important;
+  max-width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-family: Caveat !important;
+  font-size: 20px;
+  margin-top: 25px;
+
+  &:hover {
+    cursor: pointer;
   }
 }

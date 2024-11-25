@@ -23,6 +23,7 @@
   "dependencies": {
     "firebase": "^11.0.1",
     "jquery": "^3.7.1",
+    "swal": "^0.1.0",
     "sweetalert2": "^11.14.3"
   }
 }

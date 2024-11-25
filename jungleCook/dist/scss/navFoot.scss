@@ -1,3 +1,5 @@
+@import "var.scss";
+
 .navHolder {
   margin-top: 50px;
   display: flex;
@@ -8,9 +10,11 @@
   font-weight: bold;
   color: wheat;
   margin-left: 25px;
+  margin-top: -25px;
 }
-
-
+.navHolder .mobileLogo {
+  display: none;
+}
 .navHolder ul {
   list-style: none;
 }
@@ -44,7 +48,7 @@
 
 .nav-button {
   background-color: #ffd972;
-  box-shadow: -5px 10px 6px 0.2px rgba(130, 130, 160, 0.3);
+  box-shadow: $site-shadow;
   width: 150px;
   height: 50px;
   display: flex;
@@ -125,19 +129,27 @@
   display: none;
 }
 
-//END NORMAL STYLING
-//MQ
+// END NORMAL STYLING
+// MQ
 @media (max-width: 700px) {
+
+  
+
   body {
     overflow-x: hidden;
   }
   .navHolder {
     margin-top: 25px;
-
-    .logo {
+    
+    .mobileLogo {
+      display: block;
       font-size: 1.2rem;
       z-index: 2;
       margin-left: 20px;
+    }
+
+    .logo {
+      display: none;
     }
   }
 
@@ -157,7 +169,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: #a7e8bd;
+    background-color: $stie-green;
     transition: 0.4s ease-in-out;
 
     &.active {
@@ -176,8 +188,9 @@
     margin-bottom: 20px;
   }
   .nav-button,
-  .loginOnly {
-    align-self: center;
+  .loginOnly, .logoutOnly {
+    // align-self: center;
+    margin: 0 auto;
   }
 
   .hamburger-menu {

@@ -1,3 +1,5 @@
+@import "var.scss";
+
 .loginContainer {
   display: flex;
   align-items: center;
@@ -39,8 +41,8 @@
     }
     .loginButton {
       padding: 10px 20px;
-      background-color: #ffd972;
-      box-shadow: -5px 10px 6px 0.2px rgba(130, 130, 160, 0.3);
+      background-color: $site-yellow;
+      box-shadow: $site-shadow;
       border-radius: 50px;
       border: none;
       width: 200px;
@@ -58,10 +60,10 @@
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  background-color: #ffd972 !important; // Match your standard background color
+  background-color: $site-yellow !important; // Match your standard background color
   color: black !important; // Match your text color
   border-bottom: 2px solid black !important; // Match your border color if needed
-  -webkit-box-shadow: 0 0 0px 1000px #ffd972 inset; // Prevents any "highlighting" effect
+  -webkit-box-shadow: 0 0 0px 1000px $site-yellow inset; // Prevents any "highlighting" effect
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -69,7 +71,7 @@ input:-webkit-autofill:focus {
 //BG Coloring
 .background.yellow {
   &::after {
-    background-color: #ffd972 !important; /* Use !important to override */
+    background-color: $site-yellow !important; /* Use !important to override */
   }
 }
 

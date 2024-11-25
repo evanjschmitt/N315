@@ -1,10 +1,12 @@
 import * as $ from "jquery";
-import { signUserIn, signUserOut, signUserUp } from "./model";
+import { signUserIn, signUserOut, signUserUp, getData } from "./model";
+import Swal from "sweetalert2";
 
 //Recipie Form Functions
 const userRecipies = [];
+
 function initRecipieListeners() {
-  console.log("Listener HI");
+  // console.log("Listener HI");
 
   $("#ingredBtn").on("click", function () {
     // console.log("Button Clicked :)");
@@ -15,15 +17,23 @@ function initRecipieListeners() {
     );
   });
   $("#stepBtn").on("click", function () {
-    // console.log("Button Clicked :D");
     let stepCount = $(".steps input").length;
     stepCount++;
     $(".steps").append(
       `<input type="text" id="step0${stepCount}" placeholder="Step ${stepCount}"/>`
     );
   });
+
+  //Recipe Submission Listener
   $(".submitBtn").on("click", function () {
-    console.log("Button Clicked");
+    Swal.fire({
+      title: "Recipe Submitted!",
+      text: "Time to check it out!",
+      icon: "success",
+      timer: 2000,
+      showConfirmButton: false,
+      timerProgressBar: true,
+    });
     let recipie = {
       recipieName: $("#recipieName").val(),
       imageURL: $("#imageURL").val(),
@@ -37,12 +47,11 @@ function initRecipieListeners() {
       recipie.steps.push($(this).val());
     });
     userRecipies.push(recipie);
-    alert("Recipie Submitted!");
     console.log(userRecipies);
   });
 }
 function removeRecipieListeners() {
-  console.log("Listener BYE");
+  // console.log("Listener BYE");
   $("#ingredBtn").off("click");
   $("#stepBtn").off("click");
   $(".submitBtn").off("click");
@@ -115,31 +124,45 @@ function changeRoute() {
     case "showAllRecipies":
       // Set a green background color with recipe-hero.jpg image for showAllRecipies page
       background.classList.remove("hero-background", "recListBG");
-      background.style.backgroundImage = "url('./assets/images/recipe-hero.jpg')";
+      background.style.backgroundImage =
+        "url('./assets/images/recipe-hero.jpg')";
+      background.classList.add("recListBG"); // Add green overlay class
+      break;
+    case "userRecipes":
+      // Set a green background color with recipe-hero.jpg image for showAllRecipies page
+      background.classList.remove("hero-background", "recListBG");
+      background.style.backgroundImage =
+        "url('./assets/images/recipe-hero.jpg')";
       background.classList.add("recListBG"); // Add green overlay class
       break;
 
     case "home":
       // Set a red background color with hero.jpg image for home page
-      background.classList.remove("hero-background", "recListBG", "login-overlay");
-      background.style.backgroundImage = "url('./assets/images/hero.jpg')";
-      background.classList.add("hero-background"); // Add red overlay class
-      break;
-
-      case "":
-      // Set a red background color with hero.jpg image for home page
-      background.classList.remove("hero-background", "recListBG", "login-overlay");
-      background.style.backgroundImage = "url('./assets/images/hero.jpg')";
-      background.classList.add("hero-background"); // Add red overlay class
-      break;
-    default:
-      // Default white background with no overlay for other pages
       background.classList.remove(
         "hero-background",
         "recListBG",
         "login-overlay"
       );
-      background.style.backgroundImage = "none"; // No image
+      background.style.backgroundImage = "url('./assets/images/hero.jpg')";
+      background.classList.add("hero-background");
+      break;
+
+    case "":
+      background.classList.remove(
+        "hero-background",
+        "recListBG",
+        "login-overlay"
+      );
+      background.style.backgroundImage = "url('./assets/images/hero.jpg')";
+      background.classList.add("hero-background");
+      break;
+    default:
+      background.classList.remove(
+        "hero-background",
+        "recListBG",
+        "login-overlay"
+      );
+      background.style.backgroundImage = "none";
       break;
   }
 }
@@ -148,14 +171,19 @@ function initURLListener() {
   changeRoute();
 }
 
+function closeNav() {
+  nav.classList.toggle("active");
+}
+
 //Hamburger Menu Listener
 const hamburgerMenu = document.querySelector(".hamburger-menu"); //JS Way
 const nav = document.querySelector(".nav");
-
 hamburgerMenu.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
+
+//Display Image on Recipe Form
 window.displayImage = function () {
   const input = document.getElementById("imageURL");
   const img = document.getElementById("coverImg");
@@ -163,7 +191,7 @@ window.displayImage = function () {
   // Check if a file was selected
   if (input.files && input.files[0]) {
     const reader = new FileReader();
-    
+
     reader.onload = function (e) {
       img.src = e.target.result;
       img.style.display = "block";
@@ -171,19 +199,20 @@ window.displayImage = function () {
 
     reader.readAsDataURL(input.files[0]);
   }
-}
+};
 
 //Other Listeners
 function initListeners() {
+  // Nav Listeners
   $("nav a").on("click", function (e) {
     closeNav();
   });
-
   $(".clickContainer").on("click", function (e) {
-    console.log("Clicked");
+    // console.log("Clicked");
     closeNav();
   });
 
+  // Sign In/Out Listeners
   $(document).on("click", "#submit", (event) => {
     event.preventDefault();
     console.log("Button Clicked");
@@ -198,11 +227,9 @@ function initListeners() {
     $("#email").val("");
     $("#password").val("");
   });
-
   $(document).on("click", "#signOut", (event) => {
     signUserOut();
   });
-
   $(document).on("click", "#signIn", (event) => {
     const siEmail = $("#siEmail").val();
     const siPassword = $("#siPassword").val();
@@ -211,14 +238,11 @@ function initListeners() {
     $("#siPassword").val("");
   });
 
-  console.log("init list");
-}
 
-function closeNav() {
-  nav.classList.toggle("active");
 }
 
 $(document).ready(function () {
   initURLListener();
   initListeners();
+  getData();
 });
