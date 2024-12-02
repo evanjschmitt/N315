@@ -10,13 +10,14 @@ nav {
     padding-top: 10px;
   }
   .midNav {
-    // height: 100px;
     padding: 0px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: antiquewhite;
+
     .logo {
-        margin-top: 25px;
+      margin-top: 25px;
       img {
         border-radius: 100%;
         width: 150px;
@@ -40,12 +41,12 @@ nav {
       .cart {
         .itemCount {
           position: absolute;
-          top: -4;
+          top: -2;
           right: -15;
         }
       }
       .button {
-        width: 50px;
+        width: 100px;
         height: 50px;
         background-color: lightcoral;
         padding: 15px;
@@ -63,10 +64,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
     ul {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      background-color: antiquewhite;
+      width: 100%;
       li {
         list-style-type: none;
         a {
@@ -78,6 +82,23 @@ nav {
           }
         }
       }
+    }
+  }
+  .navCoupons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    .coupon {
+      background-color: rgb(139, 107, 71);
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 25px;
+      margin-bottom: 20px;
+      color: white;
+      border-radius: 50px;
     }
   }
 }
