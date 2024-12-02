@@ -26,7 +26,7 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _model_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./model.js */ \"./src/model.js\");\n/* harmony import */ var _model_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_model_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nfunction changeRoute() {\r\nlet hashTag = window.location.hash;\r\n let pageID = hashTag.replace('#', '');\r\n//   console.log(hashTag + ' ' + pageID);\r\n\r\nif (pageID != '') {\r\njquery__WEBPACK_IMPORTED_MODULE_0__.get(`pages/pageID/pageID.html`, function (data) {\r\n console.log('data ' + data);\r\n jquery__WEBPACK_IMPORTED_MODULE_0__('#app').html(data);\r\n});\r\n} else {\r\njquery__WEBPACK_IMPORTED_MODULE_0__.get(`pages/home/home.html`, function (data) {\r\nconsole.log('data ' + data);\r\n jquery__WEBPACK_IMPORTED_MODULE_0__('#app').html(data);\r\n});\r\n}\r\n}\r\n\r\nfunction initURLListener() {\r\njquery__WEBPACK_IMPORTED_MODULE_0__(window).on('hashchange', changeRoute);\r\nchangeRoute();\r\n}\r\n\r\njquery__WEBPACK_IMPORTED_MODULE_0__(document).ready(function () {\r\ninitURLListener();\r\n});\n\n//# sourceURL=webpack://week03/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _model_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./model.js */ \"./src/model.js\");\n\r\n\r\n\r\nfunction changeRoute() {\r\nlet hashTag = window.location.hash;\r\n let pageID = hashTag.replace('#', '');\r\n//   console.log(hashTag + ' ' + pageID);\r\n\r\nif (pageID != '') {\r\njquery__WEBPACK_IMPORTED_MODULE_0__.get(`pages/${pageID}.html`, function (data) {\r\n//  console.log('data ' + data);\r\n jquery__WEBPACK_IMPORTED_MODULE_0__('#app').html(data);\r\n});\r\n} else {\r\njquery__WEBPACK_IMPORTED_MODULE_0__.get(`pages/home.html`, function (data) {\r\n// console.log('data ' + data);\r\n jquery__WEBPACK_IMPORTED_MODULE_0__('#app').html(data);\r\n});\r\n}\r\n}\r\n\r\nfunction initNavlistners() {\r\n    //Account Listener\r\n    jquery__WEBPACK_IMPORTED_MODULE_0__(\".account\").on(\"click\", function() {\r\n        console.log(\"Account Clicked\");\r\n    })\r\n    //Cart Listener\r\n    jquery__WEBPACK_IMPORTED_MODULE_0__(\".cart\").on(\"click\", function() {\r\n        console.log(\"Cart Clicked (you capitalist)\")\r\n    })\r\n}\r\n\r\n\r\nfunction initURLListener() {\r\njquery__WEBPACK_IMPORTED_MODULE_0__(window).on('hashchange', changeRoute);\r\nchangeRoute();\r\n}\r\n\r\njquery__WEBPACK_IMPORTED_MODULE_0__(document).ready(function () {\r\ninitURLListener();\r\ninitNavlistners();\r\n});\n\n//# sourceURL=webpack://week03/./src/index.js?");
 
 /***/ }),
 
@@ -34,9 +34,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /*!**********************!*\
   !*** ./src/model.js ***!
   \**********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("\n\n//# sourceURL=webpack://week03/./src/model.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack://week03/./src/model.js?");
 
 /***/ })
 
