@@ -1,0 +1,27 @@
+{
+  "name": "week03",
+  "version": "1.0.0",
+  "description": "This is a cart example",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "serve": "live-server",
+    "wpserve": "live-server dist",
+    "build-webpack": "webpack",
+    "compile-sass": "sass dist/scss/styles.scss dist/css/styles.css -w --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.78.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "firebase": "^11.0.2",
+    "jquery": "^3.7.1"
+  }
+}
