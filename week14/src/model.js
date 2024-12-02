@@ -1,76 +1,91 @@
 import * as $ from "jquery";
 
-let products = [];
-let cart= [];
+export let products = [];
+export let cart = [];
 
-function loadHomePage() {
-  $("#app").html("");
+export function loadHomePage() {
+  $("#app").html(""); // Clear the app content
   $.each(products, (index, product) => {
-    let productHTML = `<div class="product">
-    <img src="${product.productImage}" alt="placeholder" />
-    <section class="desc"> ${product.productDesc}
-    </section>
-    <div id=${index} class="buy">Buy Now!</div>
-  </div>`;
-  console.log(productHTML);
-  $("#app").append(productHTML);
+    let productHTML = `
+      <div class="product">
+      ${
+        product.productBanner ? `<div class="pbanner" style="background-color: ${product.productBannerColor};>${product.productBanner}</div>` : ""
+      }
+        <img src="${product.productImage}" alt="placeholder" />
+        <section class="desc">${product.productDesc}</section>
+        <div id="${index}" class="buy">Buy Now!</div>
+      </div>`;
+    $("#app").append(productHTML);
   });
+  addBuyNowListener(); // Attach listeners after rendering
 }
 
-function loadProducts() {
+export function loadProducts(callback) {
   $.getJSON("data/data.json", (data) => {
-    products = data.PRODUCTS;
-    console.log(products);
+    products = data.PRODUCTS; // Store products
+    console.log("Loaded products:", products);
+    if (callback) callback(); // Invoke callback if provided
   });
 }
 
-function changeRoute() {
+export function changeRoute() {
   let hashTag = window.location.hash;
   let pageID = hashTag.replace("#", "");
-  //   console.log(hashTag + ' ' + pageID);
 
-  if (pageID != "") {
-    $.get(`pages/${pageID}.html`, function (data) {
+  if (pageID) {
+    $.get(`pages/${pageID}.html`, (data) => {
       $("#app").html(data);
 
-        if (pageID == "cart") {
-            if(cart.length > 0) {
-                $.each(cart, (index, product) => {
-                    let cartHtml = `<div class="product">
-                    <img src="${product.productImage}" alt="placeholder" />
-                    <section class="desc"> ${product.productDesc}
-                    </section>
-                    <div id=${index} class="buy">Buy Now!</div>
-                  </div>`;
-                  console.log(cartHtml);
-                  $("#app").append(cartHtml);
-                })
-            }
-        }
-
-
-
+      if (pageID === "cart") {
+        loadCart();
+      }
     });
+  } else {
+    // Default to homepage
+    if (products.length === 0) {
+      loadProducts(loadHomePage);
+    } else {
+      loadHomePage();
+    }
   }
-    else {
-        if (products.length <= 0) {
-            loadProducts();
-        } else {
-            loadHomePage();
-        }
-    $.get(`pages/home.html`, function (data) {
-      $("#app").html(data);
+}
+
+function loadCart() {
+  $(".cartList").html(""); // Clear the cart container to avoid duplicate items
+
+  if (cart.length > 0) {
+    $.each(cart, (index, product) => {
+      let cartHtml = `
+              <div class="product">
+                <img src="${product.productImage}" alt="placeholder" />
+                <section class="desc">${product.productDesc}</section>
+                <div data-index="${index}" class="remove">Remove From Cart</div>
+              </div>`;
+      $(".cartList").append(cartHtml);
     });
+  } else {
+    $(".cartList").html(`<h2>Your Cart</h2>
+            <p>Your cart is empty!</p>`);
   }
+
+  $(".remove").on("click", function () {
+    let indexToRemove = $(this).data("index"); // Retrieve the index from the data attribute
+    cart.splice(indexToRemove, 1); // Remove the item from the cart array
+    $(".itemCount").html(cart.length); // Update cart count
+    loadCart(); // Reload the cart to reflect changes
+  });
 }
 
 function addBuyNowListener() {
-    $(".buy").on("click", function() {
-        let index = $(this).attr("id");
-        cart.push(index);
-        $(".cartList").html(cart.length);
-        console.log(index);
-    })
+  $(".buy")
+    .off("click")
+    .on("click", function () {
+      let index = $(this).attr("id");
+      let selectedProduct = products[index];
+      cart.push(selectedProduct); // Push the entire product
+      $(".itemCount").html(cart.length); // Update cart count
+      console.log("Added to cart:", selectedProduct);
+    });
 }
 
 export function initURLListener() {
