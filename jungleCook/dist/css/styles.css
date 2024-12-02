@@ -10,6 +10,10 @@ body {
   min-height: 100%;
   margin: 0;
 }
+html.navActive,
+body.navActive {
+  overflow: hidden;
+}
 
 h1,
 h2,
@@ -146,7 +150,7 @@ header {
 .hamburger-menu {
   display: none;
   cursor: pointer;
-  z-index: 3;
+  z-index: 100;
 }
 
 .footer {
@@ -235,7 +239,7 @@ header {
   .nav--ul__two {
     flex-direction: column;
     gap: 0.6rem;
-    z-index: 2;
+    z-index: 4;
     margin-top: 50px;
   }
   .nav li {
@@ -524,6 +528,9 @@ input:-webkit-autofill:focus {
 .form {
   width: 800px;
 }
+.form.navActive {
+  display: none;
+}
 .form input {
   display: block;
   width: 100%;
@@ -619,4 +626,71 @@ input:-webkit-autofill:focus {
 }
 .submitBtn:hover {
   cursor: pointer;
+}
+
+.viewRecipe {
+  width: 80%;
+}
+.viewRecipe * {
+  font-family: Caveat;
+  font-size: 20px;
+}
+.viewRecipe .sectionHeading {
+  font-size: 25px;
+  margin-top: 10px;
+  font-family: latoBlack;
+}
+.viewRecipe .topSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.viewRecipe .topSection .recipieImgHolder {
+  position: relative;
+  margin-right: 40px;
+}
+.viewRecipe .topSection .recipieImgHolder img {
+  width: 450px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.viewRecipe .topSection .recipieImgHolder .tiltedText {
+  position: absolute;
+  rotate: -90deg;
+  left: -110px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: latoBlack;
+  letter-spacing: 2px;
+  font-size: 25px;
+}
+.viewRecipe .ingredList {
+  list-style-type: none;
+}
+.viewRecipe .instructions {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.viewRecipe .instructions .stepList {
+  margin-left: 20px;
+}
+.viewRecipe .editButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffd972;
+  border-radius: 25px;
+  box-shadow: -3px 8px 4px 0.2px rgba(130, 130, 160, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+.viewRecipe .editButton:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: -5px 10px 6px 0.2px rgba(130, 130, 160, 0.3);
+}
+
+@media (max-width: 700px) {
+  .topSection {
+    flex-direction: column;
+  }
 }

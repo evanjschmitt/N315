@@ -6,6 +6,7 @@ import {
   signOut,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  updateProfile,
 } from "firebase/auth";
 import { app } from "./firebase.config.js";
 import Swal from "sweetalert2";
@@ -32,8 +33,17 @@ export function signUserUp(fn, ln, email, password) {
     timerProgressBar: true,
   });
   createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const displayName = `${fn} ${ln}`;
+
+      // Update the user's profile with the name
+      return updateProfile(user, {
+        displayName: displayName,
+      });
+    })
     .then(() => {
-      console.log("User Created");
+      console.log("User created and name saved!");
     })
     .catch((error) => {
       console.error("Signup Error:", error);
@@ -78,33 +88,15 @@ export function signUserOut() {
     });
 }
 
-function forceRepaint() {
-  const container = $(".userRecipes");
-  const display = container.css("display");
-  container.css("display", "none");
-  container.css("display", display);
-  console.log("Repainted");
-}
-
 export function getData() {
-  // Show loading spinner (optional)
-  $(".userRecipes").html("<p>Loading recipes...</p>");
-
   $.getJSON("data/data.json", function (data) {
     // console.log(data);
 
     const recipes = data.Recipes;
 
-    // if (!Array.isArray(recipes)) {
-    //   console.error("Recipes is not an array:", recipes);
-    //   $(".userRecipes").html("<p>Error: Could not load recipes.</p>");
-    //   return;
-    // }
-
-    $(".userRecipes").empty();
+    // $(".userRecipes").empty();
 
     $.each(recipes, (idx, recipe) => {
-      // console.log("Processing individual recipe:", recipe);
       const ingredients = Array.isArray(recipe.ingredients)
         ? recipe.ingredients
         : [];
@@ -116,14 +108,12 @@ export function getData() {
         <div class="recipie">
           <div class="recipieImgHolder">
             <img src="${
-              recipe.imageURL || "./assets/images/placeholder.jpg"
+              recipe.imageURL || "assets/images/car.jpg"
             }" alt="Recipe Image" />
           </div>
           <div class="recipieDesc">
             <h3 class="header">${recipe.name || "Not specified"}</h3>
-            <p class="recDesc">${
-              recipe.recipeDesc || "No description available"
-            }</p>
+            <p class="recDesc">${recipe.desc || "No description available"}</p>
             <span class="descCounter">
               <img src="./assets/images/time.svg" alt="Time to Cook" /> ${
                 recipe.totalTime || "Not specified"
@@ -141,10 +131,79 @@ export function getData() {
         </div>
       `;
 
-      $(".userRecipes").append(recString); // Append to container
-      // forceRepaint();
+      $(".userRecipes").append(recString);
     });
   }).fail(function () {
     $(".userRecipes").html("<p>Error: Could not load recipes.</p>");
   });
+}
+
+export function addRecipe() {
+  const form = document.getElementById("recipeForm");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevent form submission
+
+    const recipeName = document.getElementById("recipeName").value;
+    const recipeDesc = document.getElementById("recipeDesc").value;
+    const ingredientsInput = document.getElementById("ingredientsInput").value;
+    const stepsInput = document.getElementById("stepsInput").value;
+    const imageInput = document.getElementById("imageInput").files[0];
+
+    if (!imageInput) {
+      alert("Please select an image.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      const base64Image = event.target.result;
+
+      // Create the recipe object
+      const recipe = {
+        recipieName: recipeName,
+        desc: recipeDesc,
+        imageURL: base64Image,
+        ingredients: ingredientsInput.split(",").map((item) => item.trim()),
+        steps: stepsInput.split(",").map((item) => item.trim()),
+      };
+
+      // Add to userRecipies array
+      userRecipies.push(recipe);
+
+      // Persist to sessionStorage
+      sessionStorage.setItem("userRecipies", JSON.stringify(userRecipies));
+
+      // Display the new recipe
+      displayRecipe(recipe);
+
+      // Clear the form
+      form.reset();
+    };
+
+    reader.readAsDataURL(imageInput); // Convert image to Base64
+  });
+}
+
+export function displayRecipe(recipe) {
+  const recipeHTML = `
+    <div class="recipie">
+      <div class="recipieImgHolder">
+        <img src="${recipe.imageURL}" alt="${recipe.recipieName}" />
+      </div>
+      <div class="recipieDesc">
+        <h3>${recipe.recipieName}</h3>
+        <p>${recipe.desc}</p>
+        <p>Ingredients:</p>
+        <ul>
+          ${recipe.ingredients
+            .map((ingredient) => `<li>${ingredient}</li>`)
+            .join("")}
+        </ul>
+        <p>Steps:</p>
+        <ol>
+          ${recipe.steps.map((step) => `<li>${step}</li>`).join("")}
+        </ol>
+      </div>
+    </div>`;
+  document.querySelector(".userRecipes").innerHTML += recipeHTML;
 }

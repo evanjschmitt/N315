@@ -1,7 +1,14 @@
 import * as $ from "jquery";
-import { signUserIn, signUserOut, signUserUp, getData } from "./model";
+import {
+  signUserIn,
+  signUserOut,
+  signUserUp,
+  getData,
+  addRecipe,
+  displayRecipe,
+} from "./model";
 import Swal from "sweetalert2";
-
+import { auth } from "./firebase.config";
 //Recipie Form Functions
 const userRecipies = [];
 
@@ -26,6 +33,26 @@ function initRecipieListeners() {
 
   //Recipe Submission Listener
   $(".submitBtn").on("click", function () {
+    let recipie = {
+      recipieName: $("#recipieName").val(),
+      desc: $("#recipeDesc").val(),
+      imageURL: $("#imageURL").val(),
+      ingredients: [],
+      steps: [],
+    };
+
+    $(".ingredients input").each(function () {
+      recipie.ingredients.push($(this).val());
+    });
+    $(".steps input").each(function () {
+      recipie.steps.push($(this).val());
+    });
+
+    userRecipies.push(recipie);
+
+    // Save to sessionStorage
+    sessionStorage.setItem("userRecipies", JSON.stringify(userRecipies));
+
     Swal.fire({
       title: "Recipe Submitted!",
       text: "Time to check it out!",
@@ -34,20 +61,8 @@ function initRecipieListeners() {
       showConfirmButton: false,
       timerProgressBar: true,
     });
-    let recipie = {
-      recipieName: $("#recipieName").val(),
-      imageURL: $("#imageURL").val(),
-      ingredients: [],
-      steps: [],
-    };
-    $(".ingredients input").each(function () {
-      recipie.ingredients.push($(this).val());
-    });
-    $(".steps input").each(function () {
-      recipie.steps.push($(this).val());
-    });
-    userRecipies.push(recipie);
-    console.log(userRecipies);
+
+    window.location.href = "#showAllRecipies";
   });
 }
 function removeRecipieListeners() {
@@ -58,10 +73,10 @@ function removeRecipieListeners() {
 }
 
 //Routing
+
 function changeRoute() {
   let hashTag = window.location.hash;
-  let pageID = hashTag.replace("#", "");
-
+  const pageID = hashTag.replace("#", "");
   // Check if there's a page ID and load the page content
   if (pageID != "") {
     $.get(`pages//${pageID}/${pageID}.html`, function (data) {
@@ -71,31 +86,36 @@ function changeRoute() {
         initRecipieListeners();
       } else if (pageID === "showAllRecipies") {
         let recipieCode = "";
+
+        // Load session-specific recipes
         $.each(userRecipies, function (index, recipie) {
           recipieCode += `<div class="recipie">
             <div class="recipieImgHolder">
-              <img src="${recipie.imageURL}" alt="${recipie.recipieName} image" />
+              <img src="${recipie.imageURL}" alt="${
+            recipie.recipieName
+          } image" />
             </div>
             <div class="recipieDesc">
               <h3>${recipie.recipieName}</h3>
               <p>Ingredients:</p>
               <ul>
-                <li>Lorem, ipsum.</li>
-                <li>Ea, atque?</li>
-                <li>Illo, ex.</li>
-                <li>Ad, nulla!</li>
+                ${recipie.ingredients
+                  .map((ingredient) => `<li>${ingredient}</li>`)
+                  .join("")}
               </ul>
               <p>Steps:</p>
               <ol>
-                <li>Lorem ipsum dolor sit.</li>
-                <li>Minima delectus voluptates tenetur.</li>
-                <li>Autem aliquid quaerat facilis!</li>
-                <li>Laudantium fuga at omnis.</li>
+                ${recipie.steps.map((step) => `<li>${step}</li>`).join("")}
               </ol>
             </div>
           </div>`;
         });
-        $("#recipieList").append(recipieCode); // Append recipieCode, not userRecipies
+
+        // Load recipes from data.json
+        getData(); // Fetch recipes from data.json
+
+        // Append session and data.json recipes together
+        $("#recipieList").append(recipieCode);
         removeRecipieListeners();
       } else {
         removeRecipieListeners();
@@ -171,6 +191,7 @@ function initURLListener() {
   changeRoute();
 }
 
+//Nav Closing
 function closeNav() {
   nav.classList.toggle("active");
 }
@@ -180,15 +201,19 @@ const hamburgerMenu = document.querySelector(".hamburger-menu"); //JS Way
 const nav = document.querySelector(".nav");
 hamburgerMenu.addEventListener("click", () => {
   nav.classList.toggle("active");
+  if (pageID == "recipieForm") {
+    let hashTag = window.location.hash;
+    const pageID = hashTag.replace("#", "");
+    const recForm = document.querySelector(".form");
+    recForm.classList.toggle("navActive");
+  }
 });
-
 
 //Display Image on Recipe Form
 window.displayImage = function () {
   const input = document.getElementById("imageURL");
   const img = document.getElementById("coverImg");
 
-  // Check if a file was selected
   if (input.files && input.files[0]) {
     const reader = new FileReader();
 
@@ -206,9 +231,18 @@ function initListeners() {
   // Nav Listeners
   $("nav a").on("click", function (e) {
     closeNav();
+    let hashTag = window.location.hash;
+    const pageID = hashTag.replace("#", "");
+    if (pageID == "recipieForm") {
+      const recForm = document.querySelector(".form");
+      recForm.classList.toggle("navActive");
+    }
   });
   $(".clickContainer").on("click", function (e) {
-    // console.log("Clicked");
+    if (pageID == "recipieForm") {
+      const recForm = document.querySelector(".form");
+      recForm.classList.toggle("navActive");
+    }
     closeNav();
   });
 
@@ -238,16 +272,29 @@ function initListeners() {
     $("#siPassword").val("");
   });
 
+  //Header Changer
+  document.addEventListener("DOMContentLoaded", () => {
+    const userNameElement = document.getElementById("user-name");
 
+    // Fetch the user's name
+    const user = auth.currentUser;
+    if (user && user.displayName) {
+      userNameElement.textContent = user.displayName; // Update header with the user's name
+    } else {
+      userNameElement.textContent = "Guest";
+    }
+  });
 }
 
 $(document).ready(function () {
+  // Initialize URL listeners and other setup functions
   initURLListener();
   initListeners();
-  const checkUserRecipes = setInterval(() => {
-    if ($(".userRecipes").length > 0) {
-      clearInterval(checkUserRecipes); // Stop checking
-      getData(); // Now safe to call
-    }
-  }, 100); // Check every 100ms
+  addRecipe();
+  // Load user recipes from sessionStorage
+  const savedRecipes = sessionStorage.getItem("userRecipies");
+  if (savedRecipes) {
+    const loadedRecipes = JSON.parse(savedRecipes);
+    loadedRecipes.forEach((recipe) => displayRecipe(recipe));
+  }
 });

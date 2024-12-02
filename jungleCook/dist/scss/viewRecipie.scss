@@ -1,0 +1,73 @@
+@import "var.scss";
+.viewRecipe {
+  * {
+    font-family: Caveat;
+    font-size: 20px;
+  }
+  width: 80%;
+  .sectionHeading {
+    font-size: 25px;
+    margin-top: 10px;
+    font-family: latoBlack;
+  }
+  .topSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // margin-left: -30px;
+
+    .recipieImgHolder {
+      position: relative; // Set to relative for absolute positioning within
+      margin-right: 40px;
+
+      img {
+        width: 450px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .tiltedText {
+        position: absolute;
+        rotate: -90deg;
+        left: -110px; // Adjust for distance from the image
+        top: 50%; // Center vertically
+        transform: translateY(-50%); // Adjust for true vertical center
+        font-family: latoBlack;
+        letter-spacing: 2px;
+        font-size: 25px;
+      }
+    }
+  }
+  .ingredList {
+    list-style-type: none;
+  }
+  .instructions {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .stepList {
+      margin-left: 20px;
+    }
+  }
+  .editButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: $site-yellow;
+    border-radius: 25px;
+    box-shadow: $site-light-shadow;
+    transition: all .3s ease-in-out;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        box-shadow: $site-shadow;
+    }
+  }
+}
+
+//MQ 
+@media (max-width: 700px) {
+    .topSection{
+        flex-direction: column;
+    }
+}

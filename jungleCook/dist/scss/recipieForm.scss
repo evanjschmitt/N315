@@ -1,6 +1,9 @@
 @import "var.scss";
 
 .form {
+  &.navActive {
+    display: none;
+  }
   width: 800px;
 
   input {
