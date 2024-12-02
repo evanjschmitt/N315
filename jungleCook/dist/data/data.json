@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Supreme Pizza",
       "desc": "Make pizza night super duper out of this world with homemade pizza. This recipe is supreme with vegetables and two types of meat. Yum!",
-      "imageURL": "../assets/images/recipe-pizza.jpg",
+      "imageURL": "./assets/images/recipe-pizza.jpg",
       "totalTime": "1 hr 24 min",
       "servingSize": 4,
       "steps": [
@@ -20,7 +20,7 @@
       "id": 2,
       "name": "Classic Burger",
       "desc": "Sink your teeth into a delicious restaurant-style, hamburger recipe made from lean beef. Skip the prepackaged patties and take the extra time to craft up your own, and that little extra effort will be worth it.",
-      "imageURL": "../assets/images/recipe-burger.jpg",
+      "imageURL": "./assets/images/recipe-burger.jpg",
       "totalTime": "30 min",
       "servingSize": 4,
       "steps": [],

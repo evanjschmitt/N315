@@ -48,6 +48,7 @@ export function signUserUp(fn, ln, email, password) {
     .catch((error) => {
       console.error("Signup Error:", error);
     });
+  
 }
 
 export function signUserIn(email, password) {
@@ -136,74 +137,4 @@ export function getData() {
   }).fail(function () {
     $(".userRecipes").html("<p>Error: Could not load recipes.</p>");
   });
-}
-
-export function addRecipe() {
-  const form = document.getElementById("recipeForm");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent form submission
-
-    const recipeName = document.getElementById("recipeName").value;
-    const recipeDesc = document.getElementById("recipeDesc").value;
-    const ingredientsInput = document.getElementById("ingredientsInput").value;
-    const stepsInput = document.getElementById("stepsInput").value;
-    const imageInput = document.getElementById("imageInput").files[0];
-
-    if (!imageInput) {
-      alert("Please select an image.");
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function (event) {
-      const base64Image = event.target.result;
-
-      // Create the recipe object
-      const recipe = {
-        recipieName: recipeName,
-        desc: recipeDesc,
-        imageURL: base64Image,
-        ingredients: ingredientsInput.split(",").map((item) => item.trim()),
-        steps: stepsInput.split(",").map((item) => item.trim()),
-      };
-
-      // Add to userRecipies array
-      userRecipies.push(recipe);
-
-      // Persist to sessionStorage
-      sessionStorage.setItem("userRecipies", JSON.stringify(userRecipies));
-
-      // Display the new recipe
-      displayRecipe(recipe);
-
-      // Clear the form
-      form.reset();
-    };
-
-    reader.readAsDataURL(imageInput); // Convert image to Base64
-  });
-}
-
-export function displayRecipe(recipe) {
-  const recipeHTML = `
-    <div class="recipie">
-      <div class="recipieImgHolder">
-        <img src="${recipe.imageURL}" alt="${recipe.recipieName}" />
-      </div>
-      <div class="recipieDesc">
-        <h3>${recipe.recipieName}</h3>
-        <p>${recipe.desc}</p>
-        <p>Ingredients:</p>
-        <ul>
-          ${recipe.ingredients
-            .map((ingredient) => `<li>${ingredient}</li>`)
-            .join("")}
-        </ul>
-        <p>Steps:</p>
-        <ol>
-          ${recipe.steps.map((step) => `<li>${step}</li>`).join("")}
-        </ol>
-      </div>
-    </div>`;
-  document.querySelector(".userRecipes").innerHTML += recipeHTML;
 }

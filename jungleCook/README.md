@@ -19,4 +19,4 @@ https://console.firebase.google.com/u/0/project/n315-class/overview
 
 ## Web4 Link:
 
-https://in-info-web4.luddy.indianapolis.iu.edu/~ejschmit/N315/jungleCook/dist/
+https://in-info-web4.luddy.indianapolis.iu.edu/~ejschmit/N315/jungleCook/

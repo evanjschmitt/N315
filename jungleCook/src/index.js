@@ -4,8 +4,6 @@ import {
   signUserOut,
   signUserUp,
   getData,
-  addRecipe,
-  displayRecipe,
 } from "./model";
 import Swal from "sweetalert2";
 import { auth } from "./firebase.config";
@@ -84,7 +82,7 @@ function changeRoute() {
 
       if (pageID === "recipieForm") {
         initRecipieListeners();
-      } else if (pageID === "showAllRecipies") {
+      } else if (pageID === "showAllRecipies" || "userRecipes") {
         let recipieCode = "";
 
         // Load session-specific recipes
@@ -290,11 +288,4 @@ $(document).ready(function () {
   // Initialize URL listeners and other setup functions
   initURLListener();
   initListeners();
-  addRecipe();
-  // Load user recipes from sessionStorage
-  const savedRecipes = sessionStorage.getItem("userRecipies");
-  if (savedRecipes) {
-    const loadedRecipes = JSON.parse(savedRecipes);
-    loadedRecipes.forEach((recipe) => displayRecipe(recipe));
-  }
 });
