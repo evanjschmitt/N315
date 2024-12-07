@@ -1,0 +1,44 @@
+{
+  "PRODUCTS": [
+    {
+      "productImage": "./assets/img/car.jpg",
+      "productName": "Product One",
+      "productPrice": "100.00",
+      "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",
+      "productBanner": "",
+      "productBannerColor": ""
+    },
+    {
+      "productImage": "./assets/img/car2.png",
+      "productName": "Product Two",
+      "productPrice": "100.00",
+      "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",
+      "productBanner": "Woahhhh Banner",
+      "productBannerColor": "yellow"
+    },
+    {
+      "productImage": "./assets/img/car3.png",
+      "productName": "Product Three",
+      "productPrice": "100.00",
+      "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",
+      "productBanner": "",
+      "productBannerColor": ""
+    },
+    {
+      "productImage": "./assets/img/car.jpg",
+      "productName": "Product Four",
+      "productPrice": "100.00",
+      "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",
+      "productBanner": "I have one too :)",
+      "productBannerColor": "red"
+    },
+    {
+      "productImage": "./assets/img/car.jpg",
+      "productName": "Product Five",
+      "productPrice": "100.00",
+      "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",
+      "productBanner": "",
+      "productBannerColor": ""
+    }
+  ]
+}

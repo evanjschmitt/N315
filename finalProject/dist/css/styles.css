@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 16px;
+}
+
+.products {
+  max-width: 950px;
+  margin: 0 auto;
+  padding-top: 25px;
+  background-color: lightpink;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 40%;
+  max-width: 300px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-bottom: 25px;
+  background-color: honeydew;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 32px 2px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 0px 0px 32px 2px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 0px 32px 2px rgba(0, 0, 0, 0.48);
+}
+.product .pbanner {
+  width: 100%;
+  position: relative;
+  top: 0;
+}
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.product .desc {
+  width: 80%;
+  margin-top: 20px;
+}
+.product .buy {
+  padding: 10px 20px;
+  background-color: lightgreen;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.product .buy:active {
+  background-color: rgb(108, 170, 108);
+}
+
+.cartList {
+  max-width: 950px;
+  margin: 0 auto;
+  padding-top: 25px;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 40%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-bottom: 25px;
+  background-color: honeydew;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 32px 2px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 0px 0px 32px 2px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 0px 32px 2px rgba(0, 0, 0, 0.48);
+}
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.product .desc {
+  width: 80%;
+  margin-top: 20px;
+}
+.product .remove {
+  padding: 10px 20px;
+  background-color: lightcoral;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.product .remove:active {
+  background-color: rgb(170, 85, 85);
+}
+
+nav {
+  background-color: antiquewhite;
+  max-width: 2000px;
+}
+nav .banner {
+  background-color: lightblue;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 10px;
+}
+nav .midNav {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: antiquewhite;
+}
+nav .midNav .logo {
+  margin-top: 25px;
+}
+nav .midNav .logo img {
+  border-radius: 100%;
+  width: 150px;
+}
+nav .midNav .search {
+  width: 400px;
+}
+nav .midNav .search input {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  padding-left: 10px;
+}
+nav .midNav .crudButtons {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .midNav .crudButtons .cart .itemCount {
+  position: absolute;
+  top: -2;
+  right: -15;
+}
+nav .midNav .crudButtons .button {
+  width: 100px;
+  height: 50px;
+  background-color: lightcoral;
+  padding: 15px;
+  font-size: 25px;
+}
+nav .midNav .crudButtons .button:hover {
+  cursor: pointer;
+}
+nav .midNav .crudButtons .button:active {
+  background-color: rgb(175, 96, 96);
+}
+nav .navLinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav .navLinks ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: antiquewhite;
+  width: 100%;
+}
+nav .navLinks ul li {
+  list-style-type: none;
+}
+nav .navLinks ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+nav .navLinks ul li a:hover {
+  text-decoration: underline;
+}
+nav .navCoupons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+nav .navCoupons .coupon {
+  background-color: rgb(139, 107, 71);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 25px;
+  margin-bottom: 20px;
+  color: white;
+  border-radius: 50px;
+}
