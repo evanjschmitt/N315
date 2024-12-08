@@ -1,7 +1,7 @@
 {
   "PRODUCTS": [
     {
-      "productImage": "./assets/img/car.jpg",
+      "productImage": "./assets/img/placeholder/car.jpg",
       "productName": "Product One",
       "productPrice": "100.00",
       "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",
@@ -9,7 +9,7 @@
       "productBannerColor": ""
     },
     {
-      "productImage": "./assets/img/car2.png",
+      "productImage": "./assets/img/placeholder/car2.png",
       "productName": "Product Two",
       "productPrice": "100.00",
       "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",
@@ -17,7 +17,7 @@
       "productBannerColor": "yellow"
     },
     {
-      "productImage": "./assets/img/car3.png",
+      "productImage": "./assets/img/placeholder/car3.png",
       "productName": "Product Three",
       "productPrice": "100.00",
       "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",
@@ -25,7 +25,7 @@
       "productBannerColor": ""
     },
     {
-      "productImage": "./assets/img/car.jpg",
+      "productImage": "./assets/img/placeholder/car.jpg",
       "productName": "Product Four",
       "productPrice": "100.00",
       "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",
@@ -33,7 +33,7 @@
       "productBannerColor": "red"
     },
     {
-      "productImage": "./assets/img/car.jpg",
+      "productImage": "./assets/img/placeholder/car.jpg",
       "productName": "Product Five",
       "productPrice": "100.00",
       "productDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit Facere reprehenderit unde esse!",

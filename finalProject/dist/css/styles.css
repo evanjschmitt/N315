@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html, body {
@@ -109,76 +108,138 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: rgb(170, 85, 85);
 }
 
+@font-face {
+  font-family: Outfit;
+  src: url("../assets/fonts/Outfit-VariableFont_wght.ttf");
+  font-weight: 100 900;
+  font-style: normal;
+}
 nav {
-  background-color: antiquewhite;
+  background-color: #ECE9E4;
   max-width: 2000px;
+  font-family: Outfit;
 }
 nav .banner {
-  background-color: lightblue;
-  height: 50px;
+  background-color: #FFC92F;
+  height: 42px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   padding-top: 10px;
+  font-weight: bolder;
+}
+nav .banner .bannerLink {
+  border-bottom: 2px solid black;
+}
+nav .banner .bannerLink a {
+  color: inherit;
+  text-decoration: none;
+}
+nav .banner .thinLink {
+  font-weight: lighter;
+  border-bottom: 1px solid black;
+}
+nav .banner .closeBanner {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 10px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+nav .banner span {
+  margin: 10px;
 }
 nav .midNav {
   padding: 0px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: antiquewhite;
-}
-nav .midNav .logo {
-  margin-top: 25px;
+  height: 155px;
 }
 nav .midNav .logo img {
-  border-radius: 100%;
-  width: 150px;
+  max-width: 200px;
 }
-nav .midNav .search {
-  width: 400px;
-}
-nav .midNav .search input {
+nav .midNav .search-container {
+  display: flex;
+  align-items: center;
   width: 100%;
+  max-width: 400px;
   height: 50px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
   border-radius: 25px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+nav .midNav .search-container .search-icon {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+nav .midNav .search-container .search-icon i {
+  font-size: 20px;
   padding-left: 10px;
 }
+nav .midNav .search-container .search-input {
+  flex-grow: 1;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: none;
+}
+nav .midNav .search-container .search-input::placeholder {
+  color: #aaa;
+}
+nav .midNav .promo {
+  margin: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+}
 nav .midNav .crudButtons {
-  width: 150px;
+  min-width: 150px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+nav .midNav .crudButtons .cart {
+  position: relative;
+}
 nav .midNav .crudButtons .cart .itemCount {
   position: absolute;
-  top: -2;
-  right: -15;
+  top: 0;
+  right: 0;
+  margin-top: -20px;
+  font-size: 15px;
 }
 nav .midNav .crudButtons .button {
-  width: 100px;
-  height: 50px;
-  background-color: lightcoral;
+  height: 100px;
   padding: 15px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+nav .midNav .crudButtons .button i {
   font-size: 25px;
 }
 nav .midNav .crudButtons .button:hover {
   cursor: pointer;
-}
-nav .midNav .crudButtons .button:active {
-  background-color: rgb(175, 96, 96);
+  background-color: #F0F0F0;
 }
 nav .navLinks {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: 25px;
 }
 nav .navLinks ul {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: antiquewhite;
   width: 100%;
 }
 nav .navLinks ul li {
@@ -196,7 +257,8 @@ nav .navCoupons {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 50px;
+  padding-top: 50px;
+  background-color: white;
 }
 nav .navCoupons .coupon {
   background-color: rgb(139, 107, 71);
@@ -208,4 +270,11 @@ nav .navCoupons .coupon {
   margin-bottom: 20px;
   color: white;
   border-radius: 50px;
+}
+
+@font-face {
+  font-family: Outfit;
+  src: url("../assets/fonts/Outfit-VariableFont_wght.ttf");
+  font-weight: 100 900;
+  font-style: normal;
 }

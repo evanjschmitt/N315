@@ -1,0 +1,15 @@
+//Colors
+$site-grey: #ECE9E4;
+$site-light-grey: #F0F0F0;
+$stie-yellow: #FFC92F;
+
+//Fonts
+@font-face {
+    font-family: Outfit;
+    src: url('../assets/fonts/Outfit-VariableFont_wght.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+}
+$font-thin: 300;
+$font-reg: 400;
+$font-bold: 700;
