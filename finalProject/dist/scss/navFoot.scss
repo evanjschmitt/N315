@@ -3,9 +3,9 @@
 nav {
   background-color: $site-grey;
   max-width: 2000px;
-  font-family: Outfit;
+  font-family: kReg;
   .banner {
-    background-color: $stie-yellow;
+    background-color: $site-yellow;
     height: 42px;
     display: flex;
     align-items: center;
@@ -43,6 +43,7 @@ nav {
     height: 155px;
 
     .logo {
+      margin-right: 20px;
       img {
         max-width: 200px;
       }
@@ -56,7 +57,8 @@ nav {
       margin: 0 auto;
       border: 1px solid #ccc;
       border-radius: 25px;
-      padding: 5px 10px;
+      padding: 5px;
+      padding-left: 20px;
       box-sizing: border-box;
       background-color: #fff;
 
@@ -82,12 +84,12 @@ nav {
         }
       }
     }
-.promo {
-  margin: 20px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: $font-thin;
-}
+    .promoText {
+      margin: 20px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: $font-thin;
+    }
     .crudButtons {
       min-width: 150px;
       height: 100%;
@@ -100,7 +102,7 @@ nav {
           position: absolute;
           top: 0;
           right: 0;
-          margin-top: -20px;
+          margin-right: 10px;
           font-size: 15px;
         }
       }
@@ -124,11 +126,93 @@ nav {
       }
     }
   }
+
+  .mobileMidNav {
+    display: none;
+    padding-bottom: 30px;
+    .top {
+      z-index: 3;
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 45px;
+      margin-top: 20px;
+      .hamburger-menu {
+        z-index: 3;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .logo {
+        z-index: 3;
+        margin-left: 88px;
+        img {
+          height: 80px;
+          margin-top: -15px;
+        }
+        height: 50px;
+      }
+      .crudButtons {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 3;
+        .button {
+          padding: 10px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .cart {
+          position: relative;
+          .itemCount {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: -18px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      height: 50px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      background-color: #fff;
+      margin-top: 20px;
+
+      .search-input {
+        flex-grow: 1;
+        border: none;
+        font-size: 16px;
+        outline: none;
+        background: none;
+
+        &::placeholder {
+          color: rgb(95, 95, 95);
+          font-family: Outfit;
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
   .navLinks {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
     ul {
       display: flex;
       align-items: center;
@@ -136,33 +220,348 @@ nav {
       width: 100%;
       li {
         list-style-type: none;
+        padding: 10px 10px;
+        border-radius: 25px;
+        transition: all 0.2s ease-in;
         a {
           color: black;
           text-decoration: none;
-          font-size: 20px;
+          font-size: 100%;
           &:hover {
             text-decoration: underline;
           }
         }
+
+        &:hover {
+          background-color: white;
+          scale: 1.2;
+        }
       }
     }
+    .mobileOnly {
+      display: none;
+    }
   }
-  .navCoupons {
+}
+.navCoupons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px 0px;
+  background-color: white;
+  .couponHolder {
+    width: 30%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    padding-top: 50px;
-    background-color: white;
+
     .coupon {
-      background-color: rgb(139, 107, 71);
-      height: 150px;
+      background-color: $site-grey;
+      height: 100px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       padding: 25px;
       margin-bottom: 20px;
-      color: white;
-      border-radius: 50px;
+      border-radius: 20px;
+      transition: scale 0.2s ease-in-out;
+      text-align: center;
+      p {
+        font-size: 90%;
+        margin: 0 auto;
+      }
+      &:hover {
+        scale: 1.05;
+        text-decoration: underline;
+      }
+    }
+    .detailsText {
+      text-decoration: underline;
+      margin-top: -15px;
+    }
+  }
+}
+
+.mobileNavCoupon {
+  display: none;
+  width: 100%;
+  .couponHolder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .coupon {
+      background-color: $site-grey;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      transition: scale 0.2s ease-in-out;
+      text-align: center;
+      p {
+        font-size: 90%;
+        margin: 0 auto;
+      }
+      &:hover {
+        scale: 1.05;
+        text-decoration: underline;
+      }
+    }
+    .detailsText {
+      text-decoration: underline;
+      margin-top: -15px;
+    }
+  }
+}
+
+.promo {
+  max-width: 100%;
+  background-color: $promo-grey;
+  display: flex;
+  align-items: center;
+  img {
+    margin: 0 auto;
+    max-height: 350px;
+    max-width: 90%;
+  }
+}
+
+//Footer
+footer {
+  width: 100%;
+  margin: 0 auto;
+  h4 {
+    font-size: 22px;
+    font-family: kThin;
+    margin-top: 10px;
+  }
+  .footerBar {
+    background-color: $site-brown;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    .left {
+      a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .socials {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 0 auto;
+      p {
+        margin-right: 10px;
+        margin-top: 10px;
+      }
+      a i {
+        color: white;
+        padding: 20px;
+      }
+    }
+  }
+  .footer-nav {
+    display: flex;
+    justify-content: space-evenly;
+    .footer-column {
+      padding: 0px 20px;
+      ul {
+        list-style-type: none;
+        li a {
+          text-decoration: none;
+          color: black;
+          font-family: kThin;
+          margin-bottom: 10px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .newsletter {
+        width: 80%;
+        margin: 0 auto;
+        form {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+        }
+        .emailBox {
+          padding: 10px 10px;
+          box-sizing: border-box;
+          width: 70%;
+          height: 50px;
+          margin-left: 0;
+          &::placeholder {
+            font-size: 18px;
+            font-family: kBold;
+          }
+        }
+        .signUp {
+          width: 25%;
+          height: 50px;
+          background-color: transparent;
+          font-size: 18px;
+          font-family: kBold;
+          margin: 0 auto;
+          border: 2px solid $site-yellow;
+          margin-left: -1px;
+          box-sizing: border-box;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .country {
+        width: 80%;
+        margin-top: 20px;
+        margin: 0 auto;
+        .countryDropdown {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          width: max-content;
+          .countryImg {
+            img {
+              width: 70px;
+              border-radius: 50%;
+            }
+          }
+          .dropdown {
+            margin-left: 10px;
+            i {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-legal {
+    margin-top: 30px;
+    border-top: 2px solid $site-light-grey;
+    p {
+      font-family: kThinItal;
+    }
+    .legalLinks {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      p {
+        text-align: center;
+        a {
+          text-decoration: none;
+          color: black;
+          padding: 20px;
+        }
+      }
+    }
+    .trademarkText {
+      text-align: center;
+      margin-top: 30px;
+      padding-bottom: 50px;
+    }
+  }
+}
+
+//MQ
+@media (max-width: 1050px) {
+  body {
+    overflow-x: hidden;
+  }
+  .midNav {
+    display: none !important;
+  }
+
+  .mobileMidNav {
+    display: block !important;
+  }
+  nav {
+    .navLinks {
+      flex-direction: column;
+      gap: 2rem;
+      position: absolute;
+      right: -100%;
+      top: 0;
+      min-width: 100%;
+      padding-top: 6rem;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      transition: 0.4s ease-in-out;
+      background-color: $site-grey;
+      width: 100%;
+      height: 100%;
+      ul {
+        margin-top: 50px;
+        flex-direction: column;
+        
+      border-top: 2px solid black;
+      padding-top: 20px;
+        li {
+          a {
+          }
+        }
+      }
+      .mobileOnly {
+        display: flex !important;
+      }
+      &.active {
+        z-index: 2;
+        right: 0;
+        opacity: 1;
+      }
+    }
+  }
+
+  .navCoupons {
+    display: none !important;
+  }
+
+  .mobileNavCoupon {
+    display: block !important;
+    margin-top: 20px;
+  }
+
+  footer {
+    .footerBar {
+      flex-direction: column;
+      text-align: center;
+    }
+    .footer-nav {
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      .footer-column {
+        text-align: center;
+        h4 {
+          margin-top: 20px;
+        }
+      }
+      .country {
+        text-align: center;
+        .countryDropdown {
+          margin: 0 auto;
+        }
+      }
+    }
+    .footer-legal {
+      .legalLinks {
+        flex-direction: column;
+      }
     }
   }
 }

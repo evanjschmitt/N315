@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 14: Cart Example</title>
+    <title>Keurig Mockup</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -26,9 +26,46 @@
           </p>
           <span class="closeBanner">X</span>
         </div>
+
+        <div class="mobileMidNav">
+          <div class="top">
+            <div class="hamburger-menu">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="logo">
+              <a href="#">
+                <img src="assets/img/logo.png" alt="Cool Logo" />
+              </a>
+            </div>
+            <div class="crudButtons">
+              <section class="account">
+                <span class="button signIn"
+                  ><i class="fa-solid fa-user"></i
+                ></span>
+                </section>
+                <section class="signOut" id="signOut">
+                  <span class="button">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                  </span>
+                </section>
+              <section class="cart">
+                <span class="button">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <div class="itemCount">0</div>
+                </span>
+              </section>
+            </div>
+          </div>
+          <div class="search-container">
+            <span class="search-icon"> </span>
+            <input type="text" class="search-input" placeholder="Search" />
+          </div>
+        </div>
         <div class="midNav">
           <div class="logo">
-            <img src="assets/img/logo.png" alt="Cool Logo" />
+            <a href="#">
+              <img src="assets/img/logo.png" alt="Cool Logo" />
+            </a>
           </div>
           <div class="search-container">
             <span class="search-icon">
@@ -36,7 +73,7 @@
             </span>
             <input type="text" class="search-input" placeholder="Search..." />
           </div>
-          <div class="promo">
+          <div class="promoText">
             <h3>FREE SHIPPING $29+</h3>
           </div>
           <div class="crudButtons">
@@ -52,6 +89,13 @@
                 <p class="buttonText">Account</p>
               </span>
             </section>
+            <section class="loginOnly" id="signOut">
+              <span class="button">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>Sign Out</p>
+              </span>
+            </section>
+            </section>
             <section class="cart">
               <span class="button"
                 ><i class="fa-solid fa-cart-shopping"></i>
@@ -63,23 +107,121 @@
         </div>
         <div class="navLinks">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#cart">Cart</a></li>
+            <li><a href="#">Keurig® Starter Kit</a></li>
+            <li><a href="#">Start Auto-Delivery</a></li>
+            <li><a href="#">Beverages</a></li>
+            <li><a href="#">Coffee Makers</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">Recipes &amp; More</a></li>
+            <li class="mobileOnly"><a href="#">Support</a></li>
           </ul>
-        </div>
-        <div class="navCoupons">
-          <div class="coupon">Lorem ipsum dolor sit amet consectetur.</div>
-          <div class="coupon">Modi assumenda omnis eligendi? Nemo, magnam.</div>
-          <div class="coupon">
-            Consequuntur nulla minus sit modi laudantium!
-          </div>
         </div>
       </nav>
     </header>
 
     <div id="app"></div>
+    <footer>
+      <div class="footerBar">
+        <div class="left">
+         <section class="findStore"><a href="#"><p><i class="fa-solid fa-location-dot"></i> Find a Store</p></a></section>
+        <section class="customerSupport"><p>Customer Support: 866-901-BREW(2739)</p></section>  
+        </div>
+        <div class="right">
+          <div class="socials">
+            <p>Follow Us</p>
+            <a href="https://twitter.com/Keurig"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.facebook.com/keurig/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/keurig/"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+       
+        
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Coffee Makers</a></li>
+            <li><a href="#">Beverages</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Deals</a></li>
+          </ul>
+          <h4>Orders</h4>
+          <ul>
+            <li><a href="#">Track Your Order</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Auto Delivery Orders</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Helpful Info</h4>
+          <ul>
+            <li><a href="#">Register Your Appliance</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">Product Recall</a></li>
+            <li><a href="#">Business Solution</a></li>
+            <li><a href="#">Site Map</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">CA Notice at Collection</a></li>
+            <li>
+              <a href="#">Do Not Sell or Share My Personal Information</a>
+            </li>
+            <li><a href="#">Keurig Perks Terms and Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Accepted Payment</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <div class="newsletter">
+             <h4>Join Our Mailing List</h4>
+             <p>Stay up-to-date with the latest news and new arrivals direct to your inbox.</p>
+             <form>
+               <input type="email" placeholder="Your email" class="emailBox" />
+               <button type="submit" class="signUp">Sign Up</button>
+             </form>
+           </div>
+           <div class="country">
+            <h4>Select Country</h4>
+            <div class="countryDropdown">
+              <div class="countryImg">
+                <img src="assets/img/USA.png" alt="Country Flag">
+              </div>
+              <div class="dropdown">
+                <p>United States <i class="fa-solid fa-angle-down"></i> </p>
+              </div>
+            </div>
+           </div>
+         </div>
+      </div>
+      </div>
+      <div class="footer-legal">
+        <section class="legalLinks">
+        <p>&copy; 2024 Keurig Green Mountain, Inc. All rights reserved.</p>
+        <p>
+          <a href="#">Privacy Policy</a> 
+          <a href="#">Terms of Use</a> 
+          <a href="#">Modern Slavery Act</a>
+        </p>  
+        </section>
+        <section>
+          <section class="trademarkText"><p>All trademarks are the property of their respective owners, used with permission.
+          </p>  </section>
+        
+        </section>
+        
+      </div>
+    </footer>
     <script src="app/app.js"></script>
   </body>
 </html>

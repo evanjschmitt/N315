@@ -1,7 +1,7 @@
 {
-  "name": "week03",
+  "name": "315final",
   "version": "1.0.0",
-  "description": "This is a cart example",
+  "description": "This is a Keurig Mockup for my Adv. Web Dev Final",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "firebase": "^11.0.2",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "sweetalert2": "^11.14.5"
   }
 }

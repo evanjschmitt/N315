@@ -2,20 +2,31 @@
   max-width: 950px;
   margin: 0 auto;
   padding-top: 25px;
-  background-color: lightpink;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
 .product {
-  .pbanner {
-    width: 100%;
-    // background-color: yellow;
-    // padding: 25px;
-    position: relative;
-    top: 0;
+  position: relative;
+  &:hover {
+    cursor: pointer;
   }
+
+  .pbanner {
+    width: max-content;
+    padding: 10px 20px;
+    color: black;
+    font-family: kBold;
+    font-size: 12px;
+    background-color: #1463b9;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+
   width: 40%;
   max-width: 300px;
   min-height: 500px;
@@ -24,7 +35,6 @@
   justify-content: space-evenly;
   flex-direction: column;
   margin-bottom: 25px;
-  background-color: honeydew;
   padding: 20px;
   -webkit-box-shadow: 0px 0px 32px 2px rgba(0, 0, 0, 0.48);
   -moz-box-shadow: 0px 0px 32px 2px rgba(0, 0, 0, 0.48);
@@ -32,22 +42,151 @@
 
   img {
     width: 100%;
+    min-height: 300px;
     height: auto;
     object-fit: contain;
     border-radius: 10px;
   }
+  .colors {
+    display: flex;
+    margin-top: -20px;
+    margin-left: -10px;
+    .color {
+      width: 30px; // Set the size of the inner circle
+      height: 30px;
+      border-radius: 50%; // Make it circular
+      background-color: black; // Inner circle color
+      position: relative;
+      margin-left: 15px;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -5px; // Adjust to create the ring
+        left: -5px;
+        width: 40px; // Outer circle size (inner size + ring size)
+        height: 40px;
+        border-radius: 50%; // Make it circular
+        border: 2px solid black; // Black ring around the circle
+        box-sizing: border-box; // Include border in size calculation
+      }
+    }
+  }
   .desc {
-    width: 80%;
+    width: 95%;
     margin-top: 20px;
   }
+  .siteDeal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid darkgrey;
+    .price {
+      margin-right: 10px;
+      p {
+        color: $site-red;
+        font-family: kBold;
+        font-size: 22px;
+        margin-bottom: 0px;
+      }
+      h5 {
+        color: darkgray;
+        text-decoration: line-through;
+      }
+    }
+    .deal {
+      p {
+        font-family: kBold;
+      }
+    }
+  }
+  .starterKit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .price {
+      margin-right: 10px;
+      p {
+        color: $site-red;
+        font-family: kBold;
+        font-size: 22px;
+        margin-bottom: 0px;
+      }
+      h5 {
+        color: darkgray;
+        text-decoration: line-through;
+      }
+    }
+    .deal {
+      p {
+        font-family: kBold;
+      }
+    }
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 80%;
+    .star-rating {
+      font-size: 20px;
+      color: $site-yellow;
+    }
+    .ratingText {
+      margin-top: 5px;
+      // margin-left: 20px;
+      font-size: 15px;
+      font-family: kReg;
+    }
+  }
+  .shipping {
+    margin-bottom: 15px;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 18px;
+
+      p {
+        margin: 0 auto;
+        margin-left: 10px;
+        font-family: kBold;
+      }
+    }
+  }
+  .compare {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .compareBox {
+      width: 25px;
+      height: 25px;
+      border: 2px solid $site-grey;
+    }
+    .compareText {
+      margin: 0 auto;
+      margin-left: 10px;
+      color: #1463b9;
+    }
+  }
   .buy {
-    padding: 10px 20px;
-    background-color: lightgreen;
-    border-radius: 10px;
+    padding: 10px 40px;
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid $site-yellow;
+    border-radius: 5px;
+    font-family: kBold;
+    font-size: 20px;
     margin-top: 20px;
+    text-align: center;
     cursor: pointer;
-    &:active {
-      background-color: rgb(108, 170, 108);
+    margin-bottom: 20px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      scale: 1.2;
     }
   }
 }

@@ -50,7 +50,6 @@ export function signUserUp(fn, ln, email, password) {
     });
   
 }
-
 export function signUserIn(email, password) {
   Swal.fire({
     title: "Signing In...",

@@ -1,0 +1,86 @@
+@import "var.scss";
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 60px;
+  margin-top: 20px;
+
+  .loginForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 0 auto;
+
+    .heading {
+      margin-bottom: 60px;
+      width: 250px;
+
+      h3 {
+        font-size: 30px;
+        font-family: kThin;
+        text-align: left;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+    input {
+      margin-bottom: 50px;
+      border: none;
+      background-color: transparent;
+      border-bottom: 2px solid black;
+      width: 250px;
+      font-size: 12px;
+      padding: 5px;
+      &::placeholder {
+        color: black;
+        font-family: kReg;
+        font-size: 15px;
+      }
+    }
+    .loginButton {
+      padding: 10px 20px;
+      background-color: $site-yellow;
+      align-items: center;
+      border-radius: 50px;
+      border: none;
+      width: 200px;
+      height: 50px;
+      font-family: kBold;
+      font-size: 25px;
+      transition: scale .2s ease-in-out;
+      p {
+        text-align: center;
+        margin-top: -4px;
+        font-family: kBold;
+      }
+      &:hover {
+        cursor: pointer;
+        scale: 1.05;
+      }
+    }
+  }
+}
+
+//Autofill Styling Fix
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  color: black !important; // Match your text color
+  border-bottom: 2px solid black !important; // Match your border color if needed
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@media (max-width: 700px) {
+  .loginContainer {
+    flex-direction: column;
+    .loginForm {
+      margin-top: 50px;
+    }
+  }
+}

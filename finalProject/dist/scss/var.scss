@@ -1,9 +1,16 @@
 //Colors
 $site-grey: #ECE9E4;
 $site-light-grey: #F0F0F0;
-$stie-yellow: #FFC92F;
+$site-yellow: #FFC92F;
+$promo-grey: #FFFBF5;
+$site-brown: #3B2B2F;
+$site-light-brown: #886159;
+$site-red: #E67773;
 
+
+$hover-underline: '&:hover { text-decoration: underline;}';
 //Fonts
+//Outfit (Initial Font Choice)
 @font-face {
     font-family: Outfit;
     src: url('../assets/fonts/Outfit-VariableFont_wght.ttf');
@@ -13,3 +20,27 @@ $stie-yellow: #FFC92F;
 $font-thin: 300;
 $font-reg: 400;
 $font-bold: 700;
+
+
+
+//Keurig Fonts (Lifted from website)
+@font-face {
+    font-family: kReg;
+    src: url(../assets/fonts/keurigFonts/kReg.ttf);
+};
+@font-face {
+    font-family: kThin;
+    src: url(../assets/fonts/keurigFonts/kThin.ttf);
+};
+@font-face {
+    font-family: kThinItal;
+    src: url(../assets/fonts/keurigFonts/kThinItal.ttf);
+};
+@font-face {
+    font-family: kBold;
+    src: url(../assets/fonts/keurigFonts/kBold.ttf);
+};
+@font-face {
+    font-family: kSemiBold;
+    src: url(../assets/fonts/keurigFonts/kSemiBold.ttf);
+}
