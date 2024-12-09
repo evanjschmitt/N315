@@ -26,7 +26,6 @@ Your site needs to replicate the following:
 - **Shopping Cart:**
   - A cart icon in the top-right corner displaying the count of purchased coffee makers.
   - A cart page listing all coffee makers added via the "Buy Now" button.
-  - An "empty cart" button to clear all products.
 - **Product Details:** Each product must display:
   - Product image
   - Product name
@@ -36,7 +35,6 @@ Your site needs to replicate the following:
 ### Data Handling:
 
 - Use a JSON file to load all products on the page.
-- Store additional data in-memory or use browser local storage (data resets on page refresh unless local storage is used).
 
 ### Styling and Responsiveness:
 
@@ -48,12 +46,6 @@ Your site needs to replicate the following:
 - Follow the **MVC model** for development.
 - Use view injection for one-page navigation.
 - Implement URL-based navigation.
-
-### Notes:
-
-- Ad pop-ups are not required.
-
----
 
 ## Links
 
